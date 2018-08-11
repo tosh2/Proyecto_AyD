@@ -11,6 +11,7 @@ import { AngularFirestoreModule, AngularFirestore} from 'angularfire2/firestore'
 import {ServicioTemaService} from './sysforum-services/servicio-tema.service';
 
 import {FormsModule} from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import {FormsModule} from '@angular/forms';
     BrowserModule,
     AngularFireModule,
     AngularFirestoreModule,
-    AngularFireModule.initializeApp(environment.firebase, 'angular-fs')
+    AngularFireModule.initializeApp(environment.firebase, 'angular-fs'),
+    NgbModule.forRoot()
   ],
   providers: [
     ServicioTemaService
