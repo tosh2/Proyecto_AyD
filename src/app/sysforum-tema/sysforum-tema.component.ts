@@ -13,7 +13,6 @@ export class SYSFORUMTEMAComponent implements OnInit {
   tema: Tema = {
     title:'',
     description:''
-
   };
 
   constructor(public serviciotema: ServicioTemaService) { }
