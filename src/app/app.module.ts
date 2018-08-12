@@ -9,6 +9,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule, AngularFirestore} from 'angularfire2/firestore';
 
 import {ServicioTemaService} from './sysforum-services/servicio-tema.service';
+import {AngularFireDatabaseModule, AngularFireDatabase} from 'angularfire2/database';
 
 import {FormsModule} from '@angular/forms';
 @NgModule({
@@ -19,12 +20,12 @@ import {FormsModule} from '@angular/forms';
   imports: [
     FormsModule,
     BrowserModule,
-    AngularFireModule,
-    AngularFirestoreModule,
-    AngularFireModule.initializeApp(environment.firebase, 'angular-fs')
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFirestoreModule.enablePersistence(),
   ],
   providers: [
-    ServicioTemaService
+    ServicioTemaService, AngularFireDatabase, AngularFirestore
   ],
   bootstrap: [AppComponent]
 })
