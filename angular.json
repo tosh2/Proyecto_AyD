@@ -22,11 +22,12 @@
               "src/favicon.ico",
               "src/assets"
             ],
-         "styles":  [
- 
-            "src/styles.css"
- 
-         ],
+            "styles": [
+              "src/styles.css",
+              {
+                "input": "./node_modules/bootstrap/dist/css/bootstrap.css"
+              }
+            ],
             "scripts": []
           },
           "configurations": {
