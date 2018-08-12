@@ -12,9 +12,14 @@ import { AngularFirestore } from 'angularfire2/firestore';
 export class SYSFORUMTEMAComponent implements OnInit {
 
   tema: Tema = {
+<<<<<<< HEAD
     title: '',
     description: ''
 
+=======
+    title:'',
+    description:''
+>>>>>>> 5fd238123ee6fca89345d905ad4c47dc0f5a74db
   };
 
   constructor(public serviciotema: ServicioTemaService) { }
