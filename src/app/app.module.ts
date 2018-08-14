@@ -13,10 +13,12 @@ import {AngularFireDatabaseModule, AngularFireDatabase} from 'angularfire2/datab
 
 import {FormsModule} from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SysforumListaTemasComponent } from './sysforum-lista-temas/sysforum-lista-temas.component';
 @NgModule({
   declarations: [
     AppComponent,
-    SYSFORUMTEMAComponent
+    SYSFORUMTEMAComponent,
+    SysforumListaTemasComponent
   ],
   imports: [
     FormsModule,
