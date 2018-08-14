@@ -12,6 +12,7 @@ import { Observable } from 'rxjs';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
 
+import { map} from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
@@ -22,14 +23,18 @@ export class ServicioTemaService {
   TemaDoc: AngularFirestoreDocument<Tema>;
 
   constructor(public afs: AngularFirestore) {
-    this.temaCollection = this.afs.collection('Temas');
-    /*this.temas = this.temaCollection.snapshotChanges().map(changes => {
+    this.temaCollection = this.afs.collection<Tema>('Temas');
+    this.temas = this.temaCollection.snapshotChanges().pipe(map(changes => {
       return changes.map(a => {
         const data = a.payload.doc.data() as Tema;
         data.id = a.payload.doc.id;
         return data;
       });
-    });*/
+    }));
+  }
+
+  getTemas() {
+    return this.temas; 
   }
 
   addTema(tema: Tema) {
