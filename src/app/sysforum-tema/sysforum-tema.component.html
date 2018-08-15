@@ -4,9 +4,21 @@
     Crear Tema.
   </a>
 </p>
-<div class="collapse" id="collapseExample">
-  <div class="card card-body">
-      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-      <button type="button" class="btn btn-secondary">Crear</button>
-  </div>
+
+<div class="container" id="collapseExample">
+  <form (ngSubmit)="onSubmit()">
+    <div class="card card-body">
+      <h3>Tema: </h3>
+      <input type="text" name="title" [(ngModel)]="tema.title" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+      <h3>Descripcion: </h3>
+      <input type="text" name="descripcion" [(ngModel)]="tema.description" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+    </div>
+    <input type="submit" class="btn btn-primary">
+  </form>
 </div>
+<br>
+<br>
+<br> 
+<app-sysforum-lista-temas></app-sysforum-lista-temas>
+
+
