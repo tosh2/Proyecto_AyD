@@ -1,0 +1,15 @@
+<div *ngIf="temas?.length > 0; else noTemas">
+  <div *ngFor="let tema of temas" class="container">
+  <ul  class="card card-body">
+     <li class="collection-item">
+       <b><h3>{{tema.title}}</h3></b><br>
+       {{tema.description}}<br>
+       <button class="btn btn-primary">Comentar</button>
+    </li>
+  </ul>
+</div>
+</div>
+
+<ng-template #noTemas>
+     <h5>No hay temas aun</h5>
+</ng-template>
