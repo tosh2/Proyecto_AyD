@@ -1,10 +1,14 @@
+<h1>Lista de temas</h1>
+
+<a routerLink="/CrearTema" routerLinkActive="active">Retornar</a>
+
 <div *ngIf="temas?.length > 0; else noTemas">
   <div *ngFor="let tema of temas" class="container">
   <ul  class="card card-body">
      <li class="collection-item">
        <b><h3>{{tema.title}}</h3></b><br>
        {{tema.description}}<br>
-       <button class="btn btn-primary">Comentar</button>
+       <button class="btn btn-primary" routerLink="/VerTemas/{{tema.title}}/{{tema.description}}" routerLinkActive="active">Ver</button>
     </li>
   </ul>
 </div>
@@ -13,3 +17,5 @@
 <ng-template #noTemas>
      <h5>No hay temas aun</h5>
 </ng-template>
+
+<router-outlet></router-outlet>

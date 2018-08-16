@@ -1,0 +1,18 @@
+<h1>
+  {{Titulo}}
+</h1>
+
+<a routerLink="/ListarTemas" routerLinkActive="active">Retornar</a>
+
+<br>
+<div class="container">
+  <ul  class="card card-body">
+    <li class="collection-item">
+      <b><h3>{{Nombre}}</h3></b><br>
+      {{Descri}}<br>
+      <button class="btn btn-primary" routerLinkActive="active">Comentar</button>
+   </li>
+  </ul>
+</div>
+
+<router-outlet></router-outlet>
