@@ -13,6 +13,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
 
 import { map} from 'rxjs/operators';
+import { Comentario } from '../sysforum-modelos/comentario';
 @Injectable({
   providedIn: 'root'
 })
