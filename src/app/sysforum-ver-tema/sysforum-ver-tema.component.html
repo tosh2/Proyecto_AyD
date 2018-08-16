@@ -8,11 +8,27 @@
 <div class="container">
   <ul  class="card card-body">
     <li class="collection-item">
+      <!-- <h1>{{Identi}}</h1> -->
       <b><h3>{{Nombre}}</h3></b><br>
       {{Descri}}<br>
       <button class="btn btn-primary" routerLinkActive="active">Comentar</button>
    </li>
   </ul>
 </div>
+
+<div *ngIf="comentario?.length > 0; else noComentario">
+    <div *ngFor="let comen of comentario" class="container">
+    <ul  class="card card-body">
+       <li class="collection-item">
+         <b>{{comen.contenido}}</b><br>
+      </li>
+    </ul>
+  </div>
+  </div>
+  
+  <ng-template #noComentario>
+       <h5>No hay comentarios</h5>
+  </ng-template>
+
 
 <router-outlet></router-outlet>
