@@ -13,12 +13,24 @@ import {AngularFireDatabaseModule, AngularFireDatabase} from 'angularfire2/datab
 
 import {FormsModule} from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+
+//Components
 import { SysforumListaTemasComponent } from './sysforum-lista-temas/sysforum-lista-temas.component';
+//import { ComentarioComponent } from './sysforum-comentarios/comentario/comentario.component';
+import { SysforumComentarioComponent } from './sysforum-comentario/sysforum-comentario.component';
+
+//Services
+import {ComentarioService} from './sysforum-services/comentario.service';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     SYSFORUMTEMAComponent,
-    SysforumListaTemasComponent
+    SysforumListaTemasComponent,
+    //ComentarioComponent,
+    SysforumComentarioComponent
   ],
   imports: [
     FormsModule,
@@ -30,7 +42,7 @@ import { SysforumListaTemasComponent } from './sysforum-lista-temas/sysforum-lis
     NgbModule.forRoot()
   ],
   providers: [
-    ServicioTemaService, AngularFireDatabase, AngularFirestore
+    ServicioTemaService, AngularFireDatabase, AngularFirestore, ComentarioService
   ],
   bootstrap: [AppComponent]
 })
