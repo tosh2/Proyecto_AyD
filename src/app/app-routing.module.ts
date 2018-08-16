@@ -20,7 +20,7 @@ const routes: Routes = [
     ]
   },
   { path: 'ListarTemas', component: SysforumListaTemasComponent },
-  { path: 'VerTemas/:name/:des', component: SysforumVerTemaComponent },
+  { path: 'VerTemas/:id/:name/:des', component: SysforumVerTemaComponent },
   { path: '**', component: SysforumPageNotFoundComponent}
 ];
 
