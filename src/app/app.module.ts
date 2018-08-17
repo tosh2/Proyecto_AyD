@@ -11,9 +11,15 @@ import { AngularFirestoreModule, AngularFirestore} from 'angularfire2/firestore'
 import {ServicioTemaService} from './sysforum-services/servicio-tema.service';
 import {AngularFireDatabaseModule, AngularFireDatabase} from 'angularfire2/database';
 
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SysforumListaTemasComponent } from './sysforum-lista-temas/sysforum-lista-temas.component';
+
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +33,12 @@ import { SysforumListaTemasComponent } from './sysforum-lista-temas/sysforum-lis
     AngularFireDatabaseModule,
     AngularFirestoreModule.enablePersistence(),
     AngularFireModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    BrowserAnimationsModule,
+    BsDropdownModule,
+    TooltipModule,
+    ModalModule,
+    ReactiveFormsModule
   ],
   providers: [
     ServicioTemaService, AngularFireDatabase, AngularFirestore

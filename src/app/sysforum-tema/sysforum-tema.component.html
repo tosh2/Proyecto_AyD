@@ -1,12 +1,10 @@
 
-<p>
-  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-    Crear Tema.
-  </a>
-</p>
 
-<div class="container" id="collapseExample">
+
+
+<div class="container">
   <form (ngSubmit)="onSubmit()">
+
     <div class="card card-body">
       <h3>Tema: </h3>
       <input type="text" name="title" [(ngModel)]="tema.title" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
@@ -16,9 +14,3 @@
     <input type="submit" class="btn btn-primary">
   </form>
 </div>
-<br>
-<br>
-<br> 
-<app-sysforum-lista-temas></app-sysforum-lista-temas>
-
-
