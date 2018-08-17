@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Comentario} from '../sysforum-modelos/model-comentario';
 import { ActivatedRoute } from '@angular/router';
 import {SysforumListarComentariosService} from '../sysforum-services/sysforum-listar-comentarios.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-sysforum-ver-tema',
@@ -13,8 +14,14 @@ export class SysforumVerTemaComponent implements OnInit {
   Titulo: string = "Tema:   ";
   Nombre: String;
   Descri: String;
-  Identi: String;
+  Identi: string;
   comentario : Comentario[];
+
+  coment: Comentario ={
+    $id_tema : '',
+    contenido : '',
+    //fechayhora: null
+  };
 
   constructor(
     private route: ActivatedRoute,
@@ -36,5 +43,27 @@ export class SysforumVerTemaComponent implements OnInit {
     this.comentarioServicio.getComentarios(this.Identi).subscribe(Comentar =>{
       this.comentario = Comentar;
     });
+    this.coment.$id_tema = this.route.snapshot.paramMap.get('id');
+
   }
+
+  onSubmit(comentarioForm: NgForm){
+    //Con esto inserto todos los datos
+    //this.comentarioService.insertarComentario(comentarioForm.value)
+  
+    console.log('Agregando comentario');
+    if( this.coment.contenido !==''){
+      console.log(this.coment.$id_tema);
+      //this.comentario.fechayhora = Date.now().toString();
+      
+      //this.comentarioService.insertarComentario(this.comentario);
+      this.comentarioServicio.insertarComentario(this.coment);
+      
+      this.coment.contenido = '';
+
+    }
+}
+
+
+
 }
