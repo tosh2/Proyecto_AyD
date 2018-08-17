@@ -6,6 +6,7 @@ import { AngularFireModule } from 'angularfire2';
 import { FormsModule } from '@angular/forms';
 import { environment } from '../../environments/environment';
 import { AngularFirestore } from 'angularfire2/firestore';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('SysforumListaTemasComponent', () => {
   let component: SysforumListaTemasComponent;
@@ -15,6 +16,7 @@ describe('SysforumListaTemasComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ SysforumListaTemasComponent ],
       imports: [FormsModule,
+        RouterTestingModule,
         AngularFireModule.initializeApp(environment.firebase, 'proyecto-ayd1'),
         AngularFireDatabaseModule,
         AngularFireModule,
