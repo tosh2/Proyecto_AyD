@@ -12,6 +12,8 @@ import { APP_BASE_HREF } from '@angular/common';
 import { USE_VALUE } from '@angular/core/src/di/injector';
 import { AppComponent } from '../app.component';
 import { SysforumListaTemasComponent } from '../sysforum-lista-temas/sysforum-lista-temas.component';
+import { RouterTestingModule } from '@angular/router/testing';
+
 
 describe('Componente Tema', () => {
 
@@ -19,6 +21,7 @@ describe('Componente Tema', () => {
     TestBed.configureTestingModule({
       declarations: [ SYSFORUMTEMAComponent, AppComponent, SysforumListaTemasComponent ],
       imports: [FormsModule,
+        RouterTestingModule,
       AngularFireModule.initializeApp(environment.firebase, 'proyecto-ayd1'),
       AngularFireDatabaseModule,
       AngularFireModule,
