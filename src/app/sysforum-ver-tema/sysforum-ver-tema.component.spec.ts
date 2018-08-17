@@ -28,8 +28,17 @@ describe('SysforumVerTemaComponent', () => {
     .compileComponents();
   }));
 
-
-  it('should create', () => {
+  it('Verificacion de Variables', () => {
+    fixture = TestBed.createComponent(SysforumVerTemaComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+    expect(component.Titulo).toBeTruthy();
+    expect(component.Nombre).toBeTruthy();
+    expect(component.Identi).toBeTruthy();
+    expect(component.Descri).toBeTruthy();
+    expect(component.comentario).toBeTruthy();
+  });
+  it('Crear Ver tema en otra pagina aparte', () => {
     fixture = TestBed.createComponent(SysforumVerTemaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

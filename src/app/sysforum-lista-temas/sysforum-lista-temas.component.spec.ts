@@ -28,7 +28,7 @@ describe('SysforumListaTemasComponent', () => {
   }));
 
 
-  it('should create', () => {
+  it('Listado de Temas generado con exito', () => {
     fixture = TestBed.createComponent(SysforumListaTemasComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
