@@ -1,5 +1,5 @@
 
 export interface Comentario {
-    id?: string;
+    $id_tema: string;
     contenido?: string;
 }
