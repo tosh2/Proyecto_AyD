@@ -34,6 +34,7 @@ export class ServicioTemaService {
   }
 
   getTemas() {
+
     return this.temas; 
   }
 
