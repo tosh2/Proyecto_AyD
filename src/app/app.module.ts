@@ -14,11 +14,19 @@ import {AngularFireDatabaseModule, AngularFireDatabase} from 'angularfire2/datab
 import {FormsModule} from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SysforumListaTemasComponent } from './sysforum-lista-temas/sysforum-lista-temas.component';
+import { SysforumVerTemaComponent } from './sysforum-ver-tema/sysforum-ver-tema.component';
+import { AppRoutingModule } from './/app-routing.module';
+import { SysforumPageNotFoundComponent } from './sysforum-page-not-found/sysforum-page-not-found.component';
+
+import {SysforumListarComentariosService} from './sysforum-services/sysforum-listar-comentarios.service';
+
 @NgModule({
   declarations: [
     AppComponent,
     SYSFORUMTEMAComponent,
-    SysforumListaTemasComponent
+    SysforumListaTemasComponent,
+    SysforumVerTemaComponent,
+    SysforumPageNotFoundComponent
   ],
   imports: [
     FormsModule,
@@ -27,10 +35,11 @@ import { SysforumListaTemasComponent } from './sysforum-lista-temas/sysforum-lis
     AngularFireDatabaseModule,
     AngularFirestoreModule.enablePersistence(),
     AngularFireModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    AppRoutingModule
   ],
   providers: [
-    ServicioTemaService, AngularFireDatabase, AngularFirestore
+    ServicioTemaService, AngularFireDatabase, AngularFirestore,SysforumListarComentariosService
   ],
   bootstrap: [AppComponent]
 })
