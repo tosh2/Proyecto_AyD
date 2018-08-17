@@ -16,7 +16,6 @@ describe('ServicioTemaService', () => {
         BrowserModule,
         AngularFireModule,
         AngularFireModule.initializeApp(environment.firebase, 'proyecto-ayd1'),
-        AngularFirestoreModule.enablePersistence(),
         AngularFireDatabaseModule,
     ],
       providers: [ServicioTemaService, AngularFireDatabase, AngularFirestore
