@@ -11,11 +11,13 @@ import { ServicioTemaService } from '../sysforum-services/servicio-tema.service'
 import { APP_BASE_HREF } from '@angular/common';
 import { USE_VALUE } from '@angular/core/src/di/injector';
 import { AppComponent } from '../app.component';
+import { SysforumListaTemasComponent } from '../sysforum-lista-temas/sysforum-lista-temas.component';
+
 describe('Componente Tema', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SYSFORUMTEMAComponent, AppComponent ],
+      declarations: [ SYSFORUMTEMAComponent, AppComponent, SysforumListaTemasComponent ],
       imports: [FormsModule,
       AngularFireModule.initializeApp(environment.firebase, 'proyecto-ayd1'),
       AngularFireDatabaseModule,
