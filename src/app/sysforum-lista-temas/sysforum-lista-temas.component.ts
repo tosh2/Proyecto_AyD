@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import {Tema} from '../sysforum-modelos/model-tema';
 import {ServicioTemaService} from '../sysforum-services/servicio-tema.service';
+import { RouterModule } from '@angular/router'
 
 @Component({
   selector: 'app-sysforum-lista-temas',
@@ -18,5 +19,4 @@ export class SysforumListaTemasComponent implements OnInit {
         this.temas = temas;
       });
   }
-
 }
