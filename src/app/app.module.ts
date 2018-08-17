@@ -18,6 +18,8 @@ import { SysforumVerTemaComponent } from './sysforum-ver-tema/sysforum-ver-tema.
 import { AppRoutingModule } from './/app-routing.module';
 import { SysforumPageNotFoundComponent } from './sysforum-page-not-found/sysforum-page-not-found.component';
 
+import {SysforumListarComentariosService} from './sysforum-services/sysforum-listar-comentarios.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +39,7 @@ import { SysforumPageNotFoundComponent } from './sysforum-page-not-found/sysforu
     AppRoutingModule
   ],
   providers: [
-    ServicioTemaService, AngularFireDatabase, AngularFirestore
+    ServicioTemaService, AngularFireDatabase, AngularFirestore,SysforumListarComentariosService
   ],
   bootstrap: [AppComponent]
 })
