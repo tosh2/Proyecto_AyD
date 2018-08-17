@@ -23,7 +23,7 @@ describe('ServicioTemaService', () => {
     });
   });
 
-  it('Creacion de Servicio Firebase', inject([ServicioTemaService], (service: ServicioTemaService) => {
+  it('Creacion de Servicio Firebase de tema ', inject([ServicioTemaService], (service: ServicioTemaService) => {
     expect(service).toBeTruthy();
   }));
 });

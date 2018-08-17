@@ -22,7 +22,7 @@ describe('SysforumListarComentariosService', () => {
     });
   });
 
-  it('should be created', inject([SysforumListarComentariosService], (service: SysforumListarComentariosService) => {
+  it('Creacion de Servicio Firebase Comentario', inject([SysforumListarComentariosService], (service: SysforumListarComentariosService) => {
     expect(service).toBeTruthy();
   }));
 });
