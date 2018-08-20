@@ -1,4 +1,8 @@
 <br>
+<div class="main-content">
+
+
+<!--
 <nav>
   <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
     Crear Tema.
@@ -8,6 +12,19 @@
   </a>
 </nav>
 
+
+-->
+
+<div class="sidebar-wrapper">
+  <ul class="nav">
+      <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
+          <a [routerLink]="[menuItem.path]">
+              <i class="now-ui-icons {{menuItem.icon}}"></i>
+              <p>{{menuItem.title}}</p>
+          </a>
+      </li>
+  </ul>
+</div>
 <br>
 <div class="container" id="collapseExample">
   <form (ngSubmit)="onSubmit()">
@@ -27,4 +44,6 @@
 
 <!-- <app-sysforum-lista-temas></app-sysforum-lista-temas> -->
 
-<router-outlet></router-outlet>
+
+
+</div>
