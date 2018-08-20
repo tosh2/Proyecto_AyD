@@ -31,7 +31,8 @@
                 "input": "./node_modules/bootstrap/scss/now-ui-dashboard.scss"
               }
             ],
-            "scripts": []
+            "scripts": [
+	    ]
           },
           "configurations": {
             "production": {
