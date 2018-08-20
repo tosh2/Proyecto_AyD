@@ -4,17 +4,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
-
-
 import { SYSFORUMTEMAComponent } from './sysforum-tema/sysforum-tema.component';
-
 import {environment} from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule, AngularFirestore} from 'angularfire2/firestore';
-
 import {ServicioTemaService} from './sysforum-services/servicio-tema.service';
 import {AngularFireDatabaseModule, AngularFireDatabase} from 'angularfire2/database';
-
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SysforumListaTemasComponent } from './sysforum-lista-temas/sysforum-lista-temas.component';
 import { SysforumVerTemaComponent } from './sysforum-ver-tema/sysforum-ver-tema.component';
@@ -25,9 +20,7 @@ import {SysforumListarComentariosService} from './sysforum-services/sysforum-lis
 
 
 import { ComponentsModule } from './components/components.module';
-
 import { AppComponent } from './app.component';
-
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 
 @NgModule({

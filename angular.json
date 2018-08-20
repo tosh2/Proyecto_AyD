@@ -29,7 +29,10 @@
               },
               {
                 "input": "./node_modules/bootstrap/scss/now-ui-dashboard.scss"
-              }
+              },
+	      {
+		"input": "./node_modules/material-design-icons/iconfont/material-icons.css"
+	      }
             ],
             "scripts": [
 	    ]

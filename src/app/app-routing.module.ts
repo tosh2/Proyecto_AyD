@@ -21,8 +21,8 @@ const routes: Routes = [
         {
       path: '',
       loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'
-  }]},
-  { path: 'crear', redirectTo: '/CrearTema', pathMatch: 'full' },
+  }
+]},
   { 
     path: 'CrearTema', 
     component: SYSFORUMTEMAComponent,
