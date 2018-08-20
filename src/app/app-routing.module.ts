@@ -9,11 +9,19 @@ import { SysforumListaTemasComponent } from './sysforum-lista-temas/sysforum-lis
 import { SysforumVerTemaComponent } from './sysforum-ver-tema/sysforum-ver-tema.component';
 import { SYSFORUMTEMAComponent } from './sysforum-tema/sysforum-tema.component';
 import { SysforumPageNotFoundComponent } from './sysforum-page-not-found/sysforum-page-not-found.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 
 
 //Rutas que se utilizaran
 const routes: Routes = [
+ {
+    path: '',
+    component: AdminLayoutComponent,
+    children: [
+        {
+      path: '',
+      loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'
+  }]},
   { path: 'crear', redirectTo: '/CrearTema', pathMatch: 'full' },
   { 
     path: 'CrearTema', 
@@ -25,11 +33,7 @@ const routes: Routes = [
   { path: 'ListarTemas', component: SysforumListaTemasComponent },
   { path: 'VerTemas/:id/:name/:des', component: SysforumVerTemaComponent },
   { path: '**', component: SysforumPageNotFoundComponent},
-  {
-    path: '',
-    redirectTo: 'dashboard',
-    pathMatch: 'full',
-  }
+
 ];
 
 
