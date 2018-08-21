@@ -1,11 +1,11 @@
 
 <div class="logo">
-    <a href="https://www.creative-tim.com" class="simple-text logo-mini">
+    <a href="/" class="simple-text logo-mini">
       <div class="logo-img">
-          <img src="./assets/img/angular2-logo-white.png"/>
+          <img src="./assets/img/logo.jpg"/>
       </div>
     </a>
-    <a href="https://www.creative-tim.com" class="simple-text logo-normal">
+    <a href="/" class="simple-text logo-normal">
         SysForum 
     </a>
 </div>
@@ -13,7 +13,7 @@
     <ul class="nav">
         <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
             <a [routerLink]="[menuItem.path]">
-                <i class="now-ui-icons {{menuItem.icon}}"></i>
+                <!-- <i class="now-ui-icons {{menuItem.icon}}"></i> -->
                 <p>{{menuItem.title}}</p>
             </a>
         </li>
