@@ -12,6 +12,8 @@ import { Observable } from 'rxjs';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
 
+import * as firebase from 'firebase';
+
 import { map} from 'rxjs/operators';
 
 @Injectable({
@@ -21,6 +23,7 @@ export class SysforumListarComentariosService {
   comentarioCollection: AngularFirestoreCollection<Comentario>;
   comentarios: Observable<Comentario[]>;
   ComentarioDoc: AngularFirestoreDocument<Comentario>;
+ 
 
   constructor(public afs: AngularFirestore) {
     this.comentarioCollection = this.afs.collection<Comentario>('Comentario');
@@ -49,6 +52,8 @@ export class SysforumListarComentariosService {
     //this.listaComentarios.push({
     //  contenido: comentario.contenido
     //});
+    //comentario.fecha = firebase.firestore.FieldValue.serverTimestamp();
+    
     this.comentarioCollection.add(comentario);
 }
 
