@@ -15,6 +15,7 @@ export class SysforumVerTemaComponent implements OnInit {
   Nombre: String;
   Descri: String;
   Identi: string;
+  Tag: string;
   comentario : Comentario[];
 
   coment: Comentario ={
@@ -31,6 +32,7 @@ export class SysforumVerTemaComponent implements OnInit {
     this.Nombre = "";
     this.Descri = "";
     this.Identi = "";
+    this.Tag = "";
     console.log( "Parent ID changed:", this.route.snapshot.paramMap.get('name') );
   }
    
@@ -39,6 +41,7 @@ export class SysforumVerTemaComponent implements OnInit {
     this.Titulo += this.Nombre;  
     this.Descri = this.route.snapshot.paramMap.get('des');
     this.Identi = this.route.snapshot.paramMap.get('id');
+    this.Tag = this.route.snapshot.paramMap.get('tag');
 
     this.comentarioServicio.getComentarios(this.Identi).subscribe(Comentar =>{
       this.comentario = Comentar;
