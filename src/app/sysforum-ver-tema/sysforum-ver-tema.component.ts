@@ -3,6 +3,7 @@ import {Comentario} from '../sysforum-modelos/model-comentario';
 import { ActivatedRoute } from '@angular/router';
 import {SysforumListarComentariosService} from '../sysforum-services/sysforum-listar-comentarios.service';
 import { NgForm } from '@angular/forms';
+import { Timestamp } from 'rxjs/internal/operators/timestamp';
 
 @Component({
   selector: 'app-sysforum-ver-tema',
@@ -20,8 +21,7 @@ export class SysforumVerTemaComponent implements OnInit {
 
   coment: Comentario ={
     $id_tema : '',
-    contenido : '',
-    //fechayhora: null
+    contenido : ''
   };
 
   constructor(
@@ -60,6 +60,9 @@ export class SysforumVerTemaComponent implements OnInit {
       //this.comentario.fechayhora = Date.now().toString();
       
       //this.comentarioService.insertarComentario(this.comentario);
+      
+      
+      this.coment.fecha  = new Date();
       this.comentarioServicio.insertarComentario(this.coment);
       
       this.coment.contenido = '';
