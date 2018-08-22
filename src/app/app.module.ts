@@ -1,36 +1,38 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
-import { SYSFORUMTEMAComponent } from './sysforum-tema/sysforum-tema.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
 import {environment} from '../environments/environment';
+
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule, AngularFirestore} from 'angularfire2/firestore';
-
-import {ServicioTemaService} from './sysforum-services/servicio-tema.service';
 import {AngularFireDatabaseModule, AngularFireDatabase} from 'angularfire2/database';
-
-import {FormsModule} from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AppRoutingModule } from './app-routing.module';
 
-
-//Components
+import { SYSFORUMTEMAComponent } from './sysforum-tema/sysforum-tema.component';
+import {ServicioTemaService} from './sysforum-services/servicio-tema.service';
 import { SysforumListaTemasComponent } from './sysforum-lista-temas/sysforum-lista-temas.component';
-//import { ComentarioComponent } from './sysforum-comentarios/comentario/comentario.component';
-import { SysforumComentarioComponent } from './sysforum-comentario/sysforum-comentario.component';
+import { SysforumVerTemaComponent } from './sysforum-ver-tema/sysforum-ver-tema.component';
+import { SysforumPageNotFoundComponent } from './sysforum-page-not-found/sysforum-page-not-found.component';
+import {SysforumListarComentariosService} from './sysforum-services/sysforum-listar-comentarios.service';
 
-//Services
-import {ComentarioService} from './sysforum-services/comentario.service';
 
+import { ComponentsModule } from './components/components.module';
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SYSFORUMTEMAComponent,
     SysforumListaTemasComponent,
-    //ComentarioComponent,
-    SysforumComentarioComponent
+    SysforumVerTemaComponent,
+    SysforumPageNotFoundComponent,
+    AdminLayoutComponent
+
   ],
   imports: [
     FormsModule,
@@ -39,10 +41,15 @@ import {ComentarioService} from './sysforum-services/comentario.service';
     AngularFireDatabaseModule,
     AngularFirestoreModule.enablePersistence(),
     AngularFireModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    BrowserAnimationsModule,
+    HttpModule,
+    ComponentsModule,
+    RouterModule,
+    AppRoutingModule
   ],
   providers: [
-    ServicioTemaService, AngularFireDatabase, AngularFirestore, ComentarioService
+    ServicioTemaService, AngularFireDatabase, AngularFirestore,SysforumListarComentariosService
   ],
   bootstrap: [AppComponent]
 })
