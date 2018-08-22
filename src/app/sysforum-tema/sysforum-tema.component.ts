@@ -13,8 +13,8 @@ export class SYSFORUMTEMAComponent implements OnInit {
 
   tema: Tema = {
     title: '',
-    description: ''
-
+    description: '',
+    tag : ''
   };
 
   constructor(public serviciotema: ServicioTemaService) { }
@@ -28,6 +28,7 @@ export class SYSFORUMTEMAComponent implements OnInit {
         this.serviciotema.addTema(this.tema);
         this.tema.title = '';
         this.tema.description = '';
+        this.tema.tag = '';
       }
   }
 
