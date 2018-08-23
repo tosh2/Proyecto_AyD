@@ -30,7 +30,7 @@ export class SysforumListarComentariosService {
     this.comentarios = this.comentarioCollection.snapshotChanges().pipe(map(changes => {
       return changes.map(a => {
         const data = a.payload.doc.data() as Comentario;
-        data.$id_tema = a.payload.doc.id;
+        data.id = a.payload.doc.id;
         return data;
       });
     }));
@@ -41,7 +41,7 @@ export class SysforumListarComentariosService {
     this.comentarios = this.comentarioCollection.snapshotChanges().pipe(map(changes => {
       return changes.map(a => {
         const data = a.payload.doc.data() as Comentario;
-        data.$id_tema = a.payload.doc.id;
+        data.id = a.payload.doc.id;
         return data;
       });
     }));
@@ -60,4 +60,10 @@ export class SysforumListarComentariosService {
   // addTema(tema: Tema) {
   //   this.temaCollection.add(tema);
   // }
+
+  updateLike(coment: Comentario){
+    this.ComentarioDoc = this.afs.doc(`Comentario/${coment.id}`);
+    this.ComentarioDoc.update(coment);
+  }
+
 }
