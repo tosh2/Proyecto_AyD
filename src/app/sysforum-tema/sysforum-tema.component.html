@@ -1,30 +1,33 @@
 <br>
-<nav>
-  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-    Crear Tema.
-  </a>
-  <a class="btn btn-success" data-toggle="collapse" routerLink="/ListarTemas" routerLinkActive="active">
-    Lista de Temas
-  </a>
-</nav>
+<div class="main-content">
 
-<br>
-<div class="container" id="collapseExample">
-  <form (ngSubmit)="onSubmit()">
-    <div class="card card-body">
-      <h3>Tema: </h3>
-      <input type="text" name="title" [(ngModel)]="tema.title" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-      <h3>Descripcion: </h3>
-      <input type="text" name="descripcion" [(ngModel)]="tema.description" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-    </div>
-    <br>
-    <input type="submit" class="btn btn-primary">
-  </form>
+  <div class="sidebar-wrapper">
+    <ul class="nav">
+        <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
+            <a [routerLink]="[menuItem.path]">
+                <!-- <i class="now-ui-icons {{menuItem.icon}}"></i> -->
+                <p>{{menuItem.title}}</p>
+            </a>
+        </li>
+    </ul>
+  </div>
+  <br>
+  <div class="container" id="collapseExample">
+    <form (ngSubmit)="onSubmit()">
+      <div class="card card-body">
+        <h3>Tema: </h3>
+        <input type="text" name="title" [(ngModel)]="tema.title" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        <h3>Descripcion: </h3>
+        <input type="text" name="descripcion" [(ngModel)]="tema.description" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        <h3>Tag</h3>
+        <input type="text" name="tag" [(ngModel)]="tema.tag" placeholder="#descripcion, #otraDescripcion" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+      </div>
+      <br>
+      <input type="submit" class="btn btn-primary">
+    </form>
+  </div>
+  <br>
+  <br>
+  <br> 
+
 </div>
-<br>
-<br>
-<br> 
-
-<!-- <app-sysforum-lista-temas></app-sysforum-lista-temas> -->
-
-<router-outlet></router-outlet>
