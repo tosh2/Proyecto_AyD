@@ -12,14 +12,10 @@ describe('SysforumPageNotFoundComponent', () => {
     })
     .compileComponents();
   }));
-
-  beforeEach(() => {
+  it('Error de Pagina No encontrada', () => {
     fixture = TestBed.createComponent(SysforumPageNotFoundComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
-
-  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

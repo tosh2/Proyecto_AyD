@@ -1,0 +1,23 @@
+<div class="card mt-5">
+  <div class="card-body">
+    <form #comentarioForm="ngForm" (ngSubmit)="onSubmit(comentarioForm)">
+      <div class="form-group">
+        <input 
+          type="text"
+          class="form-control" 
+          name="contenido" 
+          [(ngModel)] = "comentario.contenido"
+          placeholder="Agrega el contenido del comentario"  
+        >
+      </div>
+
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">
+          <i>Comentar</i>
+        </button>
+        
+      </div>
+
+    </form>
+  </div>
+</div>
