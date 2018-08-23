@@ -21,7 +21,8 @@ export class SysforumVerTemaComponent implements OnInit {
 
   coment: Comentario ={
     $id_tema : '',
-    contenido : ''
+    contenido : '',
+    like: 0,
   };
 
   constructor(
@@ -63,6 +64,7 @@ export class SysforumVerTemaComponent implements OnInit {
       
       
       this.coment.fecha  = new Date();
+      this.coment.like = 0;
       this.comentarioServicio.insertarComentario(this.coment);
       
       this.coment.contenido = '';
@@ -70,6 +72,11 @@ export class SysforumVerTemaComponent implements OnInit {
     }
 }
 
+  darLike(even, comen){
+    console.log(comen);
+    comen.like = comen.like +1;
+    this.comentarioServicio.updateLike(comen);  
+  }
 
 
 }

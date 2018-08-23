@@ -36,7 +36,12 @@
                 <td>
                   <h6>{{comen.fecha.toDate()| date: 'medium'}}</h6>
                   <br>
-                  <h3>{{comen.contenido}}</h3>
+                  <h3>{{comen.contenido}}</h3><br>
+                  <strong>likes: </strong>{{comen.like}}<br>
+                  <button class="btn btn-primary" routerLinkActive="active" 
+                  (click)="darLike($event, comen)">
+                    <i>like</i>
+                </button> 
                 </td>
               </tr>
             </tbody>
