@@ -12,6 +12,8 @@ import { Observable } from 'rxjs';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
 
+import * as firebase from 'firebase';
+
 import { map} from 'rxjs/operators';
 
 @Injectable({
@@ -21,13 +23,14 @@ export class SysforumListarComentariosService {
   comentarioCollection: AngularFirestoreCollection<Comentario>;
   comentarios: Observable<Comentario[]>;
   ComentarioDoc: AngularFirestoreDocument<Comentario>;
+ 
 
   constructor(public afs: AngularFirestore) {
     this.comentarioCollection = this.afs.collection<Comentario>('Comentario');
     this.comentarios = this.comentarioCollection.snapshotChanges().pipe(map(changes => {
       return changes.map(a => {
         const data = a.payload.doc.data() as Comentario;
-        data.$id_tema = a.payload.doc.id;
+        data.id = a.payload.doc.id;
         return data;
       });
     }));
@@ -38,7 +41,7 @@ export class SysforumListarComentariosService {
     this.comentarios = this.comentarioCollection.snapshotChanges().pipe(map(changes => {
       return changes.map(a => {
         const data = a.payload.doc.data() as Comentario;
-        data.$id_tema = a.payload.doc.id;
+        data.id = a.payload.doc.id;
         return data;
       });
     }));
@@ -49,10 +52,18 @@ export class SysforumListarComentariosService {
     //this.listaComentarios.push({
     //  contenido: comentario.contenido
     //});
+    //comentario.fecha = firebase.firestore.FieldValue.serverTimestamp();
+    
     this.comentarioCollection.add(comentario);
 }
 
   // addTema(tema: Tema) {
   //   this.temaCollection.add(tema);
   // }
+
+  updateLike(coment: Comentario){
+    this.ComentarioDoc = this.afs.doc(`Comentario/${coment.id}`);
+    this.ComentarioDoc.update(coment);
+  }
+
 }

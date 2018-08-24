@@ -3,6 +3,7 @@ import {Comentario} from '../sysforum-modelos/model-comentario';
 import { ActivatedRoute } from '@angular/router';
 import {SysforumListarComentariosService} from '../sysforum-services/sysforum-listar-comentarios.service';
 import { NgForm } from '@angular/forms';
+import { Timestamp } from 'rxjs/internal/operators/timestamp';
 
 @Component({
   selector: 'app-sysforum-ver-tema',
@@ -15,12 +16,13 @@ export class SysforumVerTemaComponent implements OnInit {
   Nombre: String;
   Descri: String;
   Identi: string;
+  Tag: string;
   comentario : Comentario[];
 
   coment: Comentario ={
     $id_tema : '',
     contenido : '',
-    //fechayhora: null
+    like: 0,
   };
 
   constructor(
@@ -31,6 +33,7 @@ export class SysforumVerTemaComponent implements OnInit {
     this.Nombre = "";
     this.Descri = "";
     this.Identi = "";
+    this.Tag = "";
     console.log( "Parent ID changed:", this.route.snapshot.paramMap.get('name') );
   }
    
@@ -39,6 +42,7 @@ export class SysforumVerTemaComponent implements OnInit {
     this.Titulo += this.Nombre;  
     this.Descri = this.route.snapshot.paramMap.get('des');
     this.Identi = this.route.snapshot.paramMap.get('id');
+    this.Tag = this.route.snapshot.paramMap.get('tag');
 
     this.comentarioServicio.getComentarios(this.Identi).subscribe(Comentar =>{
       this.comentario = Comentar;
@@ -57,6 +61,10 @@ export class SysforumVerTemaComponent implements OnInit {
       //this.comentario.fechayhora = Date.now().toString();
       
       //this.comentarioService.insertarComentario(this.comentario);
+      
+      
+      this.coment.fecha  = new Date();
+      this.coment.like = 0;
       this.comentarioServicio.insertarComentario(this.coment);
       
       this.coment.contenido = '';
@@ -64,6 +72,11 @@ export class SysforumVerTemaComponent implements OnInit {
     }
 }
 
+  darLike(even, comen){
+    console.log(comen);
+    comen.like = comen.like +1;
+    this.comentarioServicio.updateLike(comen);  
+  }
 
 
 }
