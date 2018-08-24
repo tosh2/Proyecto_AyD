@@ -36,7 +36,7 @@ export class ServicioTemaService {
 
   getTemas() {
 
-    return this.temas; 
+    return this.temas;
   }
 
   addTema(tema: Tema) {
