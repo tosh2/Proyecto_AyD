@@ -3,7 +3,6 @@ import { ROUTES } from '../sidebar/sidebar.component';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import { Router } from '@angular/router';
 //import Chart from 'chart.js';
-
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -37,14 +36,14 @@ export class NavbarComponent implements OnInit {
      });
     }
 
-    collapse(){
+    collapse() {
       this.isCollapsed = !this.isCollapsed;
       const navbar = document.getElementsByTagName('nav')[0];
       console.log(navbar);
       if (!this.isCollapsed) {
         navbar.classList.remove('navbar-transparent');
         navbar.classList.add('bg-white');
-      }else{
+      } else {
         navbar.classList.add('navbar-transparent');
         navbar.classList.remove('bg-white');
       }
@@ -73,7 +72,7 @@ export class NavbarComponent implements OnInit {
         const mainPanel =  <HTMLElement>document.getElementsByClassName('main-panel')[0];
 
         if (window.innerWidth < 991) {
-          setTimeout(function(){
+          setTimeout(function() {
             mainPanel.style.position = '';
           }, 500);
         }
