@@ -11,12 +11,14 @@ import { RouterModule } from '@angular/router'
 })
 export class SysforumListaTemasComponent implements OnInit {
   temas: Tema[];
-
+  
+  
   constructor(public temaServicio: ServicioTemaService) { }
    
   ngOnInit() {
       this.temaServicio.getTemas().subscribe(temas =>{
         this.temas = temas;
       });
+      
   }
 }
