@@ -25,6 +25,7 @@ export class SYSFORUMTEMAComponent implements OnInit {
   onSubmit() {
     console.log('agregando tema');
       if (this.tema.title !== '' && this.tema.description !== '') {
+        if(this.tema.tag == ''){this.tema.tag = '#sysforum';}
         this.serviciotema.addTema(this.tema);
         this.tema.title = '';
         this.tema.description = '';
