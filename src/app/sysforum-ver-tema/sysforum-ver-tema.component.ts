@@ -18,6 +18,7 @@ export class SysforumVerTemaComponent implements OnInit {
   Identi: string;
   Tag: string;
   comentario : Comentario[];
+  Vsesion: string;
 
   coment: Comentario ={
     $id_tema : '',
@@ -27,13 +28,13 @@ export class SysforumVerTemaComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    public comentarioServicio: SysforumListarComentariosService
-
+    public comentarioServicio: SysforumListarComentariosService,
   ) { 
     this.Nombre = "";
     this.Descri = "";
     this.Identi = "";
     this.Tag = "";
+    this.Vsesion = null;
     console.log( "Parent ID changed:", this.route.snapshot.paramMap.get('name') );
   }
    
@@ -70,7 +71,7 @@ export class SysforumVerTemaComponent implements OnInit {
       this.coment.contenido = '';
 
     }
-}
+  }
 
   darLike(even, comen){
     console.log(comen);
