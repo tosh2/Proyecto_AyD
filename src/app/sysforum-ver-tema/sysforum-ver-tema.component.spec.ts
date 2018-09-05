@@ -13,6 +13,8 @@ import { FooterComponent } from '../components/footer/footer.component';
 import { SidebarComponent } from '../components/sidebar/sidebar.component';
 
 describe('SysforumVerTemaComponent', () => {
+
+  var Vsesion;
   let component: SysforumVerTemaComponent;
   let fixture: ComponentFixture<SysforumVerTemaComponent>;
 
@@ -31,16 +33,28 @@ describe('SysforumVerTemaComponent', () => {
     .compileComponents();
   }));
 
+  beforeEach(function(){
+    Vsesion = null;
+  });
+
   it('Verificacion de Variables', () => {
     fixture = TestBed.createComponent(SysforumVerTemaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
     expect(component.Titulo).toBeTruthy();
   });
+  
   it('Crear Ver tema en otra pagina aparte', () => {
     fixture = TestBed.createComponent(SysforumVerTemaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
     expect(component).toBeTruthy();
   });
+
+  it('Variable de sesion debe estar vacio al iniciar', function(){
+    expect(Vsesion).toBeNull();
+  })
+
+
+
 });
