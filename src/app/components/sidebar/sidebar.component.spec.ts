@@ -27,14 +27,22 @@ describe('SidebarComponent', () => {
     .compileComponents();
   }));
 
-  beforeEach(() => {
-
-  });
-
-  it('should create', () => {
+  it('Despligue de Sidebar', () => {
     fixture = TestBed.createComponent(SidebarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
     expect(component).toBeTruthy();
+  });
+  it('Verificar Variable de sesion', () => {
+    fixture = TestBed.createComponent(SidebarComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+    expect(component.seteovariableid(' ')).toEqual('0');
+  });
+  it('Verificar Variable de sesion', () => {
+    fixture = TestBed.createComponent(SidebarComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+    expect(component.seteovariablenombre(' ')).toEqual('UsuariodePrueba');
   });
 });

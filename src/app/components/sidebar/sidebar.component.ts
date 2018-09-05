@@ -6,7 +6,7 @@ declare interface RouteInfo {
     class: string;
 }
 export const ROUTES: RouteInfo[] = [
-    { path: '/CrearTema', title: 'Crear Tema', class:'' },
+    { path: '/CrearTema', title: 'Crear Tema', class: '' },
     { path: '/ListarTemas', title: 'Listar Temas', class: '' }
     // { path: '/maps', title: 'Maps',  icon:'location_map-big', class: '' },
     // { path: '/notifications', title: 'Notifications',  icon:'ui-1_bell-53', class: '' },
@@ -22,9 +22,19 @@ export const ROUTES: RouteInfo[] = [
 })
 export class SidebarComponent implements OnInit {
   menuItems: any[];
-
+  userid: String;
+  username: String;
   constructor() { }
-
+  seteovariableid(id: String) {
+        this.userid = id;
+        return this.userid;
+    
+  }
+  seteovariablenombre(name: String) {
+        this.username = name;
+        return this.username;
+    
+  }
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
   }
@@ -33,5 +43,5 @@ export class SidebarComponent implements OnInit {
           return false;
       }
       return true;
-  };
+    }
 }
