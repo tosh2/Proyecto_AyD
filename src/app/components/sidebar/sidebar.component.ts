@@ -26,14 +26,22 @@ export class SidebarComponent implements OnInit {
   username: String;
   constructor() { }
   seteovariableid(id: String) {
+    if ( id == ' ') {
+        this.userid = '0';
+        return this.userid;
+    } else {
         this.userid = id;
         return this.userid;
-    
+    }
   }
   seteovariablenombre(name: String) {
+    if ( name == ' ') {
+        this.username = 'UsuariodePrueba';
+        return this.username;
+    } else {
         this.username = name;
         return this.username;
-    
+    }
   }
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
