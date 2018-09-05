@@ -33,10 +33,6 @@ describe('SysforumVerTemaComponent', () => {
     .compileComponents();
   }));
 
-  beforeEach(function(){
-    Vsesion = null;
-  });
-
   it('Verificacion de Variables', () => {
     fixture = TestBed.createComponent(SysforumVerTemaComponent);
     component = fixture.componentInstance;
