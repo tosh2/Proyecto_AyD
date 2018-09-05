@@ -11,6 +11,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { NavbarComponent } from '../components/navbar/navbar.component';
 import { FooterComponent } from '../components/footer/footer.component';
 import { SidebarComponent } from '../components/sidebar/sidebar.component';
+import { Component } from '@angular/core';
 
 describe('SysforumVerTemaComponent', () => {
 
@@ -48,7 +49,7 @@ describe('SysforumVerTemaComponent', () => {
   });
 
   it('Variable de sesion debe estar vacio al iniciar', function(){
-    expect(Vsesion).toBeNull();
+    expect(component.Vsesion).toBeNull();
   })
 
 
