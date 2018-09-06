@@ -12,10 +12,9 @@ import { Comentario } from '../sysforum-modelos/comentario';
 })
 export class SysforumComentarioComponent implements OnInit {
 
-  comentario: Comentario ={
+  comentario: Comentario = {
     $id_tema : '',
     contenido : '',
-    //fechayhora: null
   };
 
 
@@ -29,14 +28,11 @@ export class SysforumComentarioComponent implements OnInit {
   onSubmit(comentarioForm: NgForm){
     //Con esto inserto todos los datos
     //this.comentarioService.insertarComentario(comentarioForm.value)
-  
     console.log('Agregando comentario');
     if( this.comentario.contenido !==''){
       //this.comentario.fechayhora = Date.now().toString();
-      
       //this.comentarioService.insertarComentario(this.comentario);
       this.comentarioService.insertarComentario(comentarioForm.value);
-      
       this.comentario.contenido = '';
 
     }
