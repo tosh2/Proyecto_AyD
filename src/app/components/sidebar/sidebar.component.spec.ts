@@ -7,6 +7,8 @@ import { AngularFireModule } from 'angularfire2';
 import { environment } from '../../../environments/environment';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFirestore } from 'angularfire2/firestore';
+import { DebugElement } from '@angular/core';
+import { By } from '@angular/platform-browser';
 
 describe('SidebarComponent', () => {
   let component: SidebarComponent;
@@ -33,16 +35,34 @@ describe('SidebarComponent', () => {
     fixture.detectChanges();
     expect(component).toBeTruthy();
   });
-  it('Verificar Variable de sesion', () => {
+  it('Verificar Variable de sesion id', () => {
     fixture = TestBed.createComponent(SidebarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
     expect(component.seteovariableid(' ')).toEqual('0');
   });
-  it('Verificar Variable de sesion', () => {
+  it('Verificar Variable de sesion name', () => {
     fixture = TestBed.createComponent(SidebarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
     expect(component.seteovariablenombre(' ')).toEqual('UsuariodePrueba');
+  });
+  it('Verificar Variable de sesion id', () => {
+    fixture = TestBed.createComponent(SidebarComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+    expect(component.seteovariableid('1')).toEqual('1');
+  });
+  it('Verificar Variable de sesion name', () => {
+    fixture = TestBed.createComponent(SidebarComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+    expect(component.seteovariableid('usuario1')).toEqual('usuario1');
+  });
+  it('Verificar cantidad menus colocados en dashboard', () => {
+    fixture = TestBed.createComponent(SidebarComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+    expect(component.menuItems.length).toEqual(2);
   });
 });

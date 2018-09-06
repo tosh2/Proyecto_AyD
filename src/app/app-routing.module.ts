@@ -23,9 +23,7 @@ const routes: Routes = [
       loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'
   }
 ]},
-  { 
-    path: 'CrearTema', 
-    component: SYSFORUMTEMAComponent,
+  { path: 'CrearTema', component: SYSFORUMTEMAComponent,
     children : [
       { path: 'NCrearTema', component: SysforumVerTemaComponent }
     ]
@@ -45,7 +43,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes)
   ],
   exports: [
-    RouterModule 
+    RouterModule
   ],
 })
 

@@ -33,7 +33,7 @@ describe('SysforumComentarioComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Componente de comentario creado', () => {
     expect(component).toBeTruthy();
   });
 });
