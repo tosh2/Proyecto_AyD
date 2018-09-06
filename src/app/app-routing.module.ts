@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 // Importaciones para las rutas
 import { SysforumListaTemasComponent } from './sysforum-lista-temas/sysforum-lista-temas.component';
+import { SysforumMisTemasComponent } from './sysforum-mis-temas/sysforum-mis-temas.component';
 import { SysforumVerTemaComponent } from './sysforum-ver-tema/sysforum-ver-tema.component';
 import { SYSFORUMTEMAComponent } from './sysforum-tema/sysforum-tema.component';
 import { SysforumPageNotFoundComponent } from './sysforum-page-not-found/sysforum-page-not-found.component';
@@ -29,6 +30,7 @@ const routes: Routes = [
     ]
   },
   { path: 'ListarTemas', component: SysforumListaTemasComponent },
+  { path: 'ListarMisTemas', component: SysforumMisTemasComponent },
   { path: 'VerTemas/:id/:name/:des/:tag', component: SysforumVerTemaComponent },
   { path: '**', component: SysforumPageNotFoundComponent},
 
