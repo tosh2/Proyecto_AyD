@@ -24,6 +24,8 @@ import {SysforumListarComentariosService} from './sysforum-services/sysforum-lis
 import { ComponentsModule } from './components/components.module';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { LoginComponent } from './login/login.component';
+import { SysforumLoginComponent } from './sysforum-login/sysforum-login.component';
+import { SysforumMisTemasComponent } from './sysforum-mis-temas/sysforum-mis-temas.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { LoginComponent } from './login/login.component';
     SysforumVerTemaComponent,
     SysforumPageNotFoundComponent,
     AdminLayoutComponent,
-    LoginComponent
+    LoginComponent,
+    SysforumLoginComponent,
+    SysforumMisTemasComponent
 
   ],
   imports: [
