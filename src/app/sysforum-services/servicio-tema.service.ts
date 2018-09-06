@@ -36,6 +36,25 @@ export class ServicioTemaService {
 
   getTemas() {
 
+    this.temas = this.temaCollection.snapshotChanges().pipe(map(changes => {
+      return changes.map(a => {
+        const data = a.payload.doc.data() as Tema;
+        data.id = a.payload.doc.id;
+        return data;
+      });
+    }));
+    return this.temas;
+  }
+
+  getTemasUsuario() {
+    
+    this.temas = this.temaCollection.snapshotChanges().pipe(map(changes => {
+      return changes.map(a => {
+        const data = a.payload.doc.data() as Tema;
+        data.id = a.payload.doc.id;
+        return data;
+      });
+    }));
     return this.temas;
   }
 
