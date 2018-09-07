@@ -1,25 +1,37 @@
-
-<div class="container" id="collapseExample">
-   <div class="card card-body">
-      <h1>Lista de temas</h1>
-  </div>
-</div>
-
-
-<!-- <a routerLink="/CrearTema" routerLinkActive="active">Retornar</a> -->
+<br>
 
 <div *ngIf="temas?.length > 0; else noTemas">
-  <div *ngFor="let tema of temas" class="container">
-  <ul  class="card card-body">
-     <li class="collection-item">
-       <b><h3>{{tema.title}}</h3></b><br>
-       <small style="color:rgb(51, 255, 0);">{{tema.tag}}</small><br>
-       {{tema.description}}<br>
-       <button class="btn btn-primary" routerLink="/VerTemas/{{tema.id}}/{{tema.title}}/{{tema.description}}/{{tema.tag}}" routerLinkActive="active">Ver</button>
-    </li>
-  </ul>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-1">
+      </div>
+      <div class="col-sm-10">
+        <div class="panel panel-danger">
+          <!-- Default panel contents -->
+          <div style="background-color: lightslategray" class="panel-heading">
+            <h3 style="color: white">LISTA DE TEMAS</h3>
+          </div>
+            
+          <div class="panel-body">
+            <!-- List group -->
+            <ul class="list-group">
+              <li *ngFor="let tema of temas" class="list-group-item">
+                    
+                <b><h3>{{tema.title}}</h3></b><br>
+                <small style="color:rgb(51, 255, 0);">{{tema.tag}}</small><br>
+                {{tema.description}}<br>
+                <button class="btn btn-primary" routerLink="/VerTemas/{{tema.id}}/{{tema.title}}/{{tema.description}}/{{tema.tag}}" routerLinkActive="active">Ver</button>
+                    
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
-</div>
+
 
 <ng-template #noTemas>
      <h5>No hay temas aun</h5>
