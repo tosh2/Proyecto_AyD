@@ -4,10 +4,11 @@ describe('AppRoutingModule', () => {
   let appRoutingModule: AppRoutingModule;
 
   beforeEach(() => {
-    appRoutingModule = new AppRoutingModule();
   });
 
   it('Rutas de Aplicacion funcionando Correctamente', () => {
+    appRoutingModule = new AppRoutingModule();
+
     expect(appRoutingModule).toBeTruthy();
   });
 });

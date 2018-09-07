@@ -2,19 +2,22 @@
 <div class="logo">
     <a href="/" class="simple-text logo-mini">
       <div class="logo-img">
-          <img src="./assets/img/logo.jpg"/>
+          <img src="./assets/img/logo3.png"/>
       </div>
     </a>
+<br>
+<br>
     <a href="/" class="simple-text logo-normal">
-        SysForum 
+      <font face="Comic Sans MS,arial,verdana">SysForum</font>
     </a>
+    
 </div>
 <div class="sidebar-wrapper">
     <ul class="nav">
-        <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
+        <li routerLinkActive="active" *ngFor="let menuItem of menuItems" >
             <a [routerLink]="[menuItem.path]">
                 <!-- <i class="now-ui-icons {{menuItem.icon}}"></i> -->
-                <p>{{menuItem.title}}</p>
+                <p id="{{menuItem.class}}" class="{{menuItem.class}}" >{{menuItem.title}}</p>
             </a>
         </li>
     </ul>
