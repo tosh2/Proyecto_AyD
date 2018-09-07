@@ -46,7 +46,7 @@ export class ServicioTemaService {
     return this.temas;
   }
 
-  getTemasUsuario() {
+  getTemasUsuario(usuario: String) {
     
     this.temas = this.temaCollection.snapshotChanges().pipe(map(changes => {
       return changes.map(a => {

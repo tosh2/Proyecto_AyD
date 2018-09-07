@@ -13,16 +13,9 @@ export class SysforumListaTemasComponent implements OnInit {
   temas: Tema[];
   constructor(public temaServicio: ServicioTemaService) { }
   ngOnInit() {
-<<<<<<< HEAD
-      
-      this.temaServicio.getTemas().subscribe(temas =>{        
-=======
-      this.temaServicio.getTemas().subscribe(temas => {
-<<<<<<< HEAD
->>>>>>> cc9d92233b9592f883cc2b199b8161a877c44d5b
-=======
->>>>>>> f7d57109451de269ff22076da06d6b3dd75de17b
->>>>>>> DevelopS
+ 
+      this.temaServicio.getTemas().subscribe(temas => {        
+
         this.temas = temas;
       });
   }

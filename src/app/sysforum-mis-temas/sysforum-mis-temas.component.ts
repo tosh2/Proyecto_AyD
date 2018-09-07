@@ -18,7 +18,7 @@ export class SysforumMisTemasComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.temaServicio.getTemasUsuario().subscribe(temas => {        
+    this.temaServicio.getTemasUsuario("cualquiera").subscribe(temas => {        
       this.temas = temas;
     });
   }
