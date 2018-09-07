@@ -14,10 +14,10 @@
 </div>
 <div class="sidebar-wrapper">
     <ul class="nav">
-        <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
+        <li routerLinkActive="active" *ngFor="let menuItem of menuItems" >
             <a [routerLink]="[menuItem.path]">
                 <!-- <i class="now-ui-icons {{menuItem.icon}}"></i> -->
-                <p >{{menuItem.title}}</p>
+                <p id="{{menuItem.class}}" class="{{menuItem.class}}" >{{menuItem.title}}</p>
             </a>
         </li>
     </ul>
