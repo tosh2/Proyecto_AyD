@@ -82,4 +82,11 @@ describe('Componente Tema', () => {
     //const component = fixture.debugElement.nativeElement;
     expect(component.setNombre('')).toEqual('UsuarioPrueba');
   });
+  it('Debe de mostra el nombre de usuario en tag h6', async(() => {
+    const fixture = TestBed.createComponent(SYSFORUMTEMAComponent);
+    const component = fixture.componentInstance;
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('h6').textContent).toContain(component.userName);
+  }));  
 });
