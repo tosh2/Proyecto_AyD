@@ -51,35 +51,4 @@ describe('SysforumMisTemasComponent', () => {
 });
 
 
-describe('Listar Temas',() =>{
- 
-  //kLSIR8yuTvSR7qCcmoRy
-
-  it('deberia retornar un array de 3 posiciones',() =>{
-    let arreglo: Tema[];
-    let usuarioActual = "kLSIR8yuTvSR7qCcmoRy";
-    let afs : AngularFirestore;
-    let temaServicio = new ServicioTemaService(afs);
-    
-      temaServicio.getTemasUsuario("kLSIR8yuTvSR7qCcmoRy").subscribe(temas =>{        
-      arreglo = temas;
-      }); 
-
-      expect(arreglo.length).toEqual(3);
-  });
-
-  //0iuPkBQUSOkpgVKJaxqM
-
-  it('deberia retornar un array Vacio',() =>{
-    let arreglo: Tema[];
-    let usuarioActual = "0iuPkBQUSOkpgVKJaxqM";
-    var ServicioTema = require('../sysforum-services/servicio-tema.service');
-    var fire : AngularFirestore;
-    var temaServicio = ServicioTema.ServicioTemaService(fire);
-    arreglo = temaServicio.getTemasUsuario("0iuPkBQUSOkpgVKJaxqM");
-
-      expect(arreglo.length).toEqual(0);
-  });
-
-});
 
