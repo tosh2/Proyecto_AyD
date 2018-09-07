@@ -23,6 +23,8 @@ export class SYSFORUMTEMAComponent implements OnInit {
   constructor(public serviciotema: ServicioTemaService) { }
 
   ngOnInit() {
+    this.setId('');
+    this.setNombre('');
   }
 
 
