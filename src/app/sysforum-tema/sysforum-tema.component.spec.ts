@@ -13,13 +13,17 @@ import { USE_VALUE } from '@angular/core/src/di/injector';
 import { AppComponent } from '../app.component';
 import { SysforumListaTemasComponent } from '../sysforum-lista-temas/sysforum-lista-temas.component';
 import { RouterTestingModule } from '@angular/router/testing';
+import { NavbarComponent } from '../components/navbar/navbar.component';
+import { SidebarComponent } from '../components/sidebar/sidebar.component';
+import { FooterComponent } from '../components/footer/footer.component';
 
 
 describe('Componente Tema', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SYSFORUMTEMAComponent, AppComponent, SysforumListaTemasComponent ],
+      declarations: [ SYSFORUMTEMAComponent, AppComponent, SysforumListaTemasComponent,
+      NavbarComponent, SidebarComponent, FooterComponent ],
       imports: [FormsModule,
         RouterTestingModule,
       AngularFireModule.initializeApp(environment.firebase, 'proyecto-ayd1'),

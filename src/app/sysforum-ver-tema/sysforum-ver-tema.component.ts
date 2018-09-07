@@ -21,7 +21,8 @@ export class SysforumVerTemaComponent implements OnInit {
 
   coment: Comentario ={
     $id_tema : '',
-    contenido : ''
+    contenido : '',
+    like: 0,
   };
 
   constructor(
@@ -35,10 +36,9 @@ export class SysforumVerTemaComponent implements OnInit {
     this.Tag = "";
     console.log( "Parent ID changed:", this.route.snapshot.paramMap.get('name') );
   }
-   
   ngOnInit(): void {
     this.Nombre = this.route.snapshot.paramMap.get('name');
-    this.Titulo += this.Nombre;  
+    this.Titulo += this.Nombre;
     this.Descri = this.route.snapshot.paramMap.get('des');
     this.Identi = this.route.snapshot.paramMap.get('id');
     this.Tag = this.route.snapshot.paramMap.get('tag');
@@ -53,23 +53,24 @@ export class SysforumVerTemaComponent implements OnInit {
   onSubmit(comentarioForm: NgForm){
     //Con esto inserto todos los datos
     //this.comentarioService.insertarComentario(comentarioForm.value)
-  
     console.log('Agregando comentario');
     if( this.coment.contenido !==''){
       console.log(this.coment.$id_tema);
       //this.comentario.fechayhora = Date.now().toString();
-      
       //this.comentarioService.insertarComentario(this.comentario);
-      
-      
       this.coment.fecha  = new Date();
+      this.coment.like = 0;
       this.comentarioServicio.insertarComentario(this.coment);
-      
       this.coment.contenido = '';
 
     }
 }
 
+  darLike(even, comen) {
+    console.log(comen);
+    comen.like = comen.like +1;
+    this.comentarioServicio.updateLike(comen);  
+  }
 
 
 }
