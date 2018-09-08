@@ -76,10 +76,7 @@ export class SysforumVerTemaComponent implements OnInit {
       console.log(this.coment.$id_tema);
       //this.comentario.fechayhora = Date.now().toString();
       //this.comentarioService.insertarComentario(this.comentario);
-<<<<<<< HEAD
       
-=======
->>>>>>> 7001bf7f86d50cda0ee99925e92932c41253c8ba
       this.coment.fecha  = new Date();
       this.coment.like = 0;
       this.comentarioServicio.insertarComentario(this.coment);
@@ -88,13 +85,9 @@ export class SysforumVerTemaComponent implements OnInit {
     }
   }
 
-<<<<<<< HEAD
   darLike(even, comen){
     this.Vsesion = '2';
     console.log(this.Vsesion);
-=======
-  darLike(even, comen) {
->>>>>>> 7001bf7f86d50cda0ee99925e92932c41253c8ba
     console.log(comen);
 
     if(this.Vsesion == comen.idSesion){
