@@ -1,15 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import {Comentario} from '../sysforum-modelos/model-comentario';
+import {Like} from '../sysforum-modelos/model-like';
 import { ActivatedRoute } from '@angular/router';
 import {SysforumListarComentariosService} from '../sysforum-services/sysforum-listar-comentarios.service';
 import { NgForm } from '@angular/forms';
 import { Timestamp } from 'rxjs/internal/operators/timestamp';
+import { FirebaseApp } from 'angularfire2';
+import { SysforumLikeService } from '../sysforum-services/sysforum-like.service';
 
 @Component({
   selector: 'app-sysforum-ver-tema',
   templateUrl: './sysforum-ver-tema.component.html',
   styleUrls: ['./sysforum-ver-tema.component.css']
 })
+
 export class SysforumVerTemaComponent implements OnInit {
 
   Titulo: string = "Tema:   ";
@@ -19,6 +23,9 @@ export class SysforumVerTemaComponent implements OnInit {
   Tag: string;
   comentario : Comentario[];
   Vsesion: string;
+  bandera: boolean;
+  likeRegistrado : Like[];
+  closed:boolean = false;
 
   coment: Comentario ={
     $id_tema : '',
@@ -26,15 +33,22 @@ export class SysforumVerTemaComponent implements OnInit {
     like: 0,
   };
 
+  likeRegist : Like = {
+    $id_comentario: '',
+    $id_usuario: ''
+  }
+
   constructor(
     private route: ActivatedRoute,
     public comentarioServicio: SysforumListarComentariosService,
-  ) { 
+    public likeRegisServicio: SysforumLikeService,
+  ){ 
     this.Nombre = "";
     this.Descri = "";
     this.Identi = "";
     this.Tag = "";
     this.Vsesion = null;
+    this.bandera = false;
     console.log( "Parent ID changed:", this.route.snapshot.paramMap.get('name') );
   }
    
@@ -50,6 +64,9 @@ export class SysforumVerTemaComponent implements OnInit {
     });
     this.coment.$id_tema = this.route.snapshot.paramMap.get('id');
 
+    this.likeRegisServicio.getLikes().subscribe(CLike =>{
+      this.likeRegistrado = CLike;
+    });
   }
 
   onSubmit(comentarioForm: NgForm){
@@ -60,23 +77,21 @@ export class SysforumVerTemaComponent implements OnInit {
     if( this.coment.contenido !==''){
       console.log(this.coment.$id_tema);
       //this.comentario.fechayhora = Date.now().toString();
-      
       //this.comentarioService.insertarComentario(this.comentario);
-      
       
       this.coment.fecha  = new Date();
       this.coment.like = 0;
       this.comentarioServicio.insertarComentario(this.coment);
-      
       this.coment.contenido = '';
 
     }
   }
 
   darLike(even, comen){
-    console.log(comen);
-    comen.like = comen.like +1;
-    this.comentarioServicio.updateLike(comen);  
+    
+      comen.like = comen.like +1;
+      this.comentarioServicio.updateLike(comen); 
+
   }
 
 
