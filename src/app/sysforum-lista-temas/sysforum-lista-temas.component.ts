@@ -12,7 +12,6 @@ import { RouterModule } from '@angular/router'
 export class SysforumListaTemasComponent implements OnInit {
   temas: Tema[];
   
-  
   constructor(public temaServicio: ServicioTemaService) { }
    
   ngOnInit() {

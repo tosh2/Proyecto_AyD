@@ -23,7 +23,6 @@ export class SysforumListarComentariosService {
   comentarioCollection: AngularFirestoreCollection<Comentario>;
   comentarios: Observable<Comentario[]>;
   ComentarioDoc: AngularFirestoreDocument<Comentario>;
- 
 
   constructor(public afs: AngularFirestore) {
     this.comentarioCollection = this.afs.collection<Comentario>('Comentario');
