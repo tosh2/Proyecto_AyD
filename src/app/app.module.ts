@@ -19,7 +19,7 @@ import { SysforumListaTemasComponent } from './sysforum-lista-temas/sysforum-lis
 import { SysforumVerTemaComponent } from './sysforum-ver-tema/sysforum-ver-tema.component';
 import { SysforumPageNotFoundComponent } from './sysforum-page-not-found/sysforum-page-not-found.component';
 import {SysforumListarComentariosService} from './sysforum-services/sysforum-listar-comentarios.service';
-
+import {SysforumLikeService} from './sysforum-services/sysforum-like.service';
 
 import { ComponentsModule } from './components/components.module';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
@@ -49,7 +49,8 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     AppRoutingModule
   ],
   providers: [
-    ServicioTemaService, AngularFireDatabase, AngularFirestore,SysforumListarComentariosService
+    ServicioTemaService, AngularFireDatabase, AngularFirestore,
+    SysforumListarComentariosService, SysforumLikeService
   ],
   bootstrap: [AppComponent]
 })
