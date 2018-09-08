@@ -16,6 +16,11 @@
   </div>
 </div>
 
+<div class="container">
+    <ngb-alert *ngIf="(bandera == true)">
+        <strong>Esta!</strong> repetido.
+    </ngb-alert>
+</div>
 
 <div class="container">
   <div class="row">
@@ -41,12 +46,13 @@
                   <button class="btn btn-primary" routerLinkActive="active" 
                   (click)="darLike($event, comen)">
                     <i>like</i>
-                </button> 
+                  </button> 
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
+
         <div class="panel-footer">
           <form #comentarioForm="ngForm" (ngSubmit)="onSubmit(comentarioForm)">
             <div class="form-group">
