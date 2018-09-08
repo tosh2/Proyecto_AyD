@@ -1,27 +1,33 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, inject } from '@angular/core/testing';
 
 import { SysforumVerTemaComponent } from './sysforum-ver-tema.component';
 import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 import { environment } from '../../environments/environment';
-import {SysforumListarComentariosService} from '../sysforum-services/sysforum-listar-comentarios.service';
+import { SysforumListarComentariosService} from '../sysforum-services/sysforum-listar-comentarios.service';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { RouterTestingModule } from '@angular/router/testing';
 import { NavbarComponent } from '../components/navbar/navbar.component';
 import { FooterComponent } from '../components/footer/footer.component';
 import { SidebarComponent } from '../components/sidebar/sidebar.component';
-import { Component } from '@angular/core';
+import { NgbAlert } from '@ng-bootstrap/ng-bootstrap';
+import { SysforumLikeService } from '../sysforum-services/sysforum-like.service';
 
 describe('SysforumVerTemaComponent', () => {
 
-  var Vsesion;
   let component: SysforumVerTemaComponent;
   let fixture: ComponentFixture<SysforumVerTemaComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SysforumVerTemaComponent , SidebarComponent, NavbarComponent, FooterComponent],
+      declarations: [ 
+        SysforumVerTemaComponent,
+        SidebarComponent,
+        NavbarComponent,
+        FooterComponent,
+        NgbAlert
+      ],
       imports: [
         FormsModule,
         RouterTestingModule,
@@ -29,7 +35,7 @@ describe('SysforumVerTemaComponent', () => {
         AngularFireDatabaseModule,
         AngularFireModule,
       ],
-      providers: [ SysforumListarComentariosService, AngularFirestore, AngularFireModule],
+      providers: [ SysforumListarComentariosService, AngularFirestore, AngularFireModule, SysforumLikeService],
     })
     .compileComponents();
   }));
@@ -50,8 +56,7 @@ describe('SysforumVerTemaComponent', () => {
 
   it('Variable de sesion debe estar vacio al iniciar', function(){
     expect(component.Vsesion).toBeNull();
+    expect(component.bandera).toBeFalsy();
   })
-
-
 
 });
