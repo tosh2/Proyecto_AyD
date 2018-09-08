@@ -7,9 +7,9 @@ declare interface RouteInfo {
 }
 export const ROUTES: RouteInfo[] = [
 
-    { path: '/CrearTema', title: 'Crear Tema', class:'' },
-    { path: '/ListarTemas', title: 'Listar Temas', class: '' },
-    { path: '/ListarMisTemas', title: 'Temas',  class: '' }
+    { path: '/CrearTema', title: 'Crear Tema', class:'primermenu' },
+    { path: '/ListarTemas', title: 'Listar Temas', class: 'segundomenu' },
+    { path: '/ListarMisTemas', title: 'Temas',  class: 'tercermenu' }
 
     // { path: '/notifications', title: 'Notifications',  icon:'ui-1_bell-53', class: '' },
     // { path: '/user-profile', title: 'User Profile',  icon:'users_single-02', class: '' },
