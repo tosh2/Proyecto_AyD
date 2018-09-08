@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Usuario} from '../../sysforum-modelos/model-usuario';
 
 declare interface RouteInfo {
     path: string;
@@ -9,7 +10,7 @@ export const ROUTES: RouteInfo[] = [
 
     { path: '/CrearTema', title: 'Crear Tema', class:'' },
     { path: '/ListarTemas', title: 'Listar Temas', class: '' },
-    { path: '/ListarMisTemas', title: 'Temas',  class: '' }
+    { path: '/ListarMisTemas/:idUsuario', title: 'Temas',  class: '' }
 
     // { path: '/notifications', title: 'Notifications',  icon:'ui-1_bell-53', class: '' },
     // { path: '/user-profile', title: 'User Profile',  icon:'users_single-02', class: '' },
@@ -26,6 +27,7 @@ export class SidebarComponent implements OnInit {
   menuItems: any[];
   userid: String;
   username: String;
+  public user : Usuario;
   constructor() { }
   seteovariableid(id: String) {
     if ( id == ' ') {

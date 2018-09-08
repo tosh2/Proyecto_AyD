@@ -9,8 +9,16 @@ import { environment } from '../../environments/environment';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { RouterTestingModule } from '@angular/router/testing';
 
-import {Tema} from '../sysforum-modelos/model-tema';
 import {ServicioTemaService} from '../sysforum-services/servicio-tema.service';
+
+import {
+  AngularFirestoreCollection,
+  AngularFirestoreDocument,
+} from 'angularfire2/firestore';
+
+import {Tema} from '../sysforum-modelos/model-tema';
+//import {ServicioTemaService} from '../sysforum-services/servicio-tema.service';
+import { SysforumLoginComponent } from '../sysforum-login/sysforum-login.component';
 
 describe('SysforumMisTemasComponent', () => {
   let component: SysforumMisTemasComponent;
@@ -42,30 +50,35 @@ describe('SysforumMisTemasComponent', () => {
   
 });
 
-describe('Listar Temas',() =>{
 
+describe('Listar Temas',() =>{
+ 
   //kLSIR8yuTvSR7qCcmoRy
 
   it('deberia retornar un array de 3 posiciones',() =>{
-    let temas: Tema[];
+    let arreglo: Tema[];
     let usuarioActual = "kLSIR8yuTvSR7qCcmoRy";
-      this.temaServicio.getTemasUsuario(usuarioActual).subscribe(temas =>{        
-      this.temas = temas;
+    let afs : AngularFirestore;
+    let temaServicio = new ServicioTemaService(afs);
+    
+      temaServicio.getTemasUsuario("kLSIR8yuTvSR7qCcmoRy").subscribe(temas =>{        
+      arreglo = temas;
       }); 
 
-      expect(temas.length).toEqual(3);
+      expect(arreglo.length).toEqual(3);
   });
 
   //0iuPkBQUSOkpgVKJaxqM
 
   it('deberia retornar un array Vacio',() =>{
-    let temas: Tema[];
+    let arreglo: Tema[];
     let usuarioActual = "0iuPkBQUSOkpgVKJaxqM";
-      this.temaServicio.getTemasUsuario(usuarioActual).subscribe(temas =>{        
-      this.temas = temas;
-      }); 
+    var ServicioTema = require('../sysforum-services/servicio-tema.service');
+    var fire : AngularFirestore;
+    var temaServicio = ServicioTema.ServicioTemaService(fire);
+    arreglo = temaServicio.getTemasUsuario("0iuPkBQUSOkpgVKJaxqM");
 
-      expect(temas.length).toEqual(3);
+      expect(arreglo.length).toEqual(0);
   });
 
 });
