@@ -45,26 +45,13 @@
                     <br>
                     <h3>{{comen.contenido}}</h3>
                   
+                    <strong>likes: </strong>{{comen.like}}<br>
+                    <button class="btn btn-primary" routerLinkActive="active" 
+                    (click)="darLike($event, comen)">
+                      <i>like</i>
+                    </button> 
                 </li>
             </ul>
-        </div>
-        <div class="table-responsive">
-          <table class="table table-striped">
-            <tbody>
-              <tr *ngFor="let comen of comentario" class="container">
-                <td>
-                  <h6>{{comen.fecha.toDate()| date: 'medium'}}</h6>
-                  <br>
-                  <h3>{{comen.contenido}}</h3><br>
-                  <strong>likes: </strong>{{comen.like}}<br>
-                  <button class="btn btn-primary" routerLinkActive="active" 
-                  (click)="darLike($event, comen)">
-                    <i>like</i>
-                  </button> 
-                </td>
-              </tr>
-            </tbody>
-          </table>
         </div>
 
         <div class="panel-footer">
@@ -84,10 +71,9 @@
                   <i>Comentar</i>
               </button>
             </div>
+          </form>
         </div>
-
-
-
+      </div>
 
     </div>
   </div>
