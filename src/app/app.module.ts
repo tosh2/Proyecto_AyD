@@ -23,6 +23,9 @@ import {SysforumLikeService} from './sysforum-services/sysforum-like.service';
 
 import { ComponentsModule } from './components/components.module';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { LoginComponent } from './login/login.component';
+import { SysforumLoginComponent } from './sysforum-login/sysforum-login.component';
+import { SysforumMisTemasComponent } from './sysforum-mis-temas/sysforum-mis-temas.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     SysforumListaTemasComponent,
     SysforumVerTemaComponent,
     SysforumPageNotFoundComponent,
-    AdminLayoutComponent
+    AdminLayoutComponent,
+    LoginComponent,
+    SysforumLoginComponent,
+    SysforumMisTemasComponent
 
   ],
   imports: [
