@@ -16,6 +16,8 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { NavbarComponent } from '../components/navbar/navbar.component';
 import { SidebarComponent } from '../components/sidebar/sidebar.component';
 import { FooterComponent } from '../components/footer/footer.component';
+import { Component } from '@angular/core';
+import { componentFactoryName } from '@angular/compiler';
 
 
 describe('Componente Tema', () => {
@@ -67,4 +69,24 @@ describe('Componente Tema', () => {
     const component = fixture.debugElement.nativeElement;
     expect(component.querySelector('form')).toBeTruthy();
   });
+  it('Validar variables de sesion ID por defecto', () => { 
+    const fixture = TestBed.createComponent(SYSFORUMTEMAComponent);
+    const component = fixture.componentInstance;
+    fixture.detectChanges();
+    expect(component.setId('')).toEqual('0');
+  });
+  it('Validar variables de sesion Nombre por defecto', () => { 
+    const fixture = TestBed.createComponent(SYSFORUMTEMAComponent);
+    const component = fixture.componentInstance;
+    fixture.detectChanges();
+    //const component = fixture.debugElement.nativeElement;
+    expect(component.setNombre('')).toEqual('UsuarioPrueba');
+  });
+  it('Debe de mostra el nombre de usuario en tag h6', async(() => {
+    const fixture = TestBed.createComponent(SYSFORUMTEMAComponent);
+    const component = fixture.componentInstance;
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('h6').textContent).toContain(component.userName);
+  }));  
 });

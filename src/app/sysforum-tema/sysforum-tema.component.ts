@@ -17,9 +17,37 @@ export class SYSFORUMTEMAComponent implements OnInit {
     tag : ''
   };
 
+  userId: String;
+  userName: String;
+
   constructor(public serviciotema: ServicioTemaService) { }
 
   ngOnInit() {
+    this.setId('');
+    this.setNombre('');
+  }
+
+
+  setId(id: String){
+    if(id == ''){
+      this.userId = '0';
+      return this.userId;
+    }
+    else{
+      this.userId = id;
+      return this.userId;
+    }     
+  }
+
+  setNombre(name: String){
+    if(name == ''){
+      this.userName = 'UsuarioPrueba';
+      return this.userName;
+    }
+    else{
+      this.userName = name;
+      return this.userName;
+    }      
   }
 
   onSubmit() {
