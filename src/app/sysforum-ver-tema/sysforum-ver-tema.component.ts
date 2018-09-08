@@ -51,10 +51,9 @@ export class SysforumVerTemaComponent implements OnInit {
     this.bandera = false;
     console.log( "Parent ID changed:", this.route.snapshot.paramMap.get('name') );
   }
-   
   ngOnInit(): void {
     this.Nombre = this.route.snapshot.paramMap.get('name');
-    this.Titulo += this.Nombre;  
+    this.Titulo += this.Nombre;
     this.Descri = this.route.snapshot.paramMap.get('des');
     this.Identi = this.route.snapshot.paramMap.get('id');
     this.Tag = this.route.snapshot.paramMap.get('tag');
@@ -72,13 +71,15 @@ export class SysforumVerTemaComponent implements OnInit {
   onSubmit(comentarioForm: NgForm){
     //Con esto inserto todos los datos
     //this.comentarioService.insertarComentario(comentarioForm.value)
-  
     console.log('Agregando comentario');
     if( this.coment.contenido !==''){
       console.log(this.coment.$id_tema);
       //this.comentario.fechayhora = Date.now().toString();
       //this.comentarioService.insertarComentario(this.comentario);
+<<<<<<< HEAD
       
+=======
+>>>>>>> 7001bf7f86d50cda0ee99925e92932c41253c8ba
       this.coment.fecha  = new Date();
       this.coment.like = 0;
       this.comentarioServicio.insertarComentario(this.coment);
@@ -87,9 +88,13 @@ export class SysforumVerTemaComponent implements OnInit {
     }
   }
 
+<<<<<<< HEAD
   darLike(even, comen){
     this.Vsesion = '2';
     console.log(this.Vsesion);
+=======
+  darLike(even, comen) {
+>>>>>>> 7001bf7f86d50cda0ee99925e92932c41253c8ba
     console.log(comen);
 
     if(this.Vsesion == comen.idSesion){
