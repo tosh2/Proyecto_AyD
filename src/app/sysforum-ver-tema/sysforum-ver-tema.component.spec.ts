@@ -59,4 +59,16 @@ describe('SysforumVerTemaComponent', () => {
     expect(component.bandera).toBeFalsy();
   })
 
+  describe('test para un link por persona', function(){
+  
+    it('Revisar que la variable de sesion no sea nula', function(){
+      expect(component.Vsesion).not.toEqual('0');
+    });
+
+    it('Revisar bandera de variable de sesion', function(){
+      expect(component.bandera).toBeFalsy();
+    })
+
+
+  });
 });
