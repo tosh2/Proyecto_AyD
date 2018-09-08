@@ -88,9 +88,30 @@ export class SysforumVerTemaComponent implements OnInit {
   }
 
   darLike(even, comen){
-    
+    this.Vsesion = '2';
+    console.log(this.Vsesion);
+    console.log(comen);
+
+    if(this.Vsesion == comen.idSesion){
+      this.bandera = true;
+      console.log('Esta repetido');
+    }
+
+    for (let index = 0; index < this.likeRegistrado.length; index++) {
+      const element= this.likeRegistrado[index]
+      if(this.Vsesion == element.$id_usuario && comen.id == element.$id_comentario){
+        this.bandera = true;
+        console.log('Esta repetido');
+      }
+    }
+
+    if(this.bandera == false){
       comen.like = comen.like +1;
+      this.likeRegist.$id_comentario = comen.id;
+      this.likeRegist.$id_usuario = this.Vsesion;
+      this.likeRegisServicio.InsertarRegistroLike(this.likeRegist);
       this.comentarioServicio.updateLike(comen); 
+    }
 
   }
 
