@@ -18,7 +18,7 @@ export class SysforumMisTemasComponent implements OnInit {
     }); 
   }
 
-  public usuario;
+  public usuario : string;
 
   ngOnInit() {
     this.usuario = "kLSIR8yuTvSR7qCcmoRy";
