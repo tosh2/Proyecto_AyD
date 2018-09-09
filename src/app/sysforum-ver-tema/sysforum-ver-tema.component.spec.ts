@@ -67,6 +67,14 @@ describe('SysforumVerTemaComponent', () => {
     //const component = fixture.debugElement.nativeElement;
     expect(component.setName('')).toEqual('UsuarioPrueba');
   });
+  
+  it('Debe de mostra el nombre de usuario en tag b', async(() => {
+    const fixture = TestBed.createComponent(SysforumVerTemaComponent);
+    const component = fixture.componentInstance;
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('b').textContent).toContain(component.userName);
+  })); 
 
   it('Variable de sesion debe estar vacio al iniciar', function(){
     expect(component.Vsesion).toBeNull();
