@@ -38,6 +38,9 @@ export class SysforumVerTemaComponent implements OnInit {
     $id_usuario: ''
   }
 
+  userId : String;
+  userName : String;
+
   constructor(
     private route: ActivatedRoute,
     public comentarioServicio: SysforumListarComentariosService,
@@ -66,6 +69,28 @@ export class SysforumVerTemaComponent implements OnInit {
     this.likeRegisServicio.getLikes().subscribe(CLike =>{
       this.likeRegistrado = CLike;
     });
+    this.setId('');
+    this.setName('');
+  }
+
+  setId(id: String){
+    if(id == ''){
+      this.userId = '0';
+      return this.userId;
+    }else{
+      this.userId = id;
+      return this.userId;
+    }
+  }
+
+  setName(name: String){
+    if(name == ''){
+      this.userName = 'UsuarioPrueba';
+      return this.userName;
+    }else{
+      this.userName = name;
+      return this.userName;
+    }
   }
 
   onSubmit(comentarioForm: NgForm){
