@@ -89,7 +89,7 @@ describe('Listar Temas',() =>{
 });
   */
 
-it('Metodo darLike y su servicio sean llamados',
+it('Metodo de mostrar temas por usuraio',
 inject([ServicioTemaService], (service: ServicioTemaService) => {
 
     let usuarioActual = "0iuPkBQUSOkpgVKJaxqM";
