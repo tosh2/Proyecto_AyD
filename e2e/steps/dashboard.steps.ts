@@ -7,7 +7,7 @@ let home: Dashboard;
     Before(() => {
         home = new Dashboard();
     });
-    When(/^yo cargue la pagina en el navegador$/, async () => {
+    When(/^yo cargue la pagina en el navegador$/, {timeout: 60 * 1000}, async () => {
         await browser.get('http://localhost:4200');
     });
     Then(/^ver un menu que se llame "(.*?)"$/,
