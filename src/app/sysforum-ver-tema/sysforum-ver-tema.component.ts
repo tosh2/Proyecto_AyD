@@ -74,8 +74,6 @@ export class SysforumVerTemaComponent implements OnInit {
     console.log('Agregando comentario');
     if( this.coment.contenido !==''){
       console.log(this.coment.$id_tema);
-      //this.comentario.fechayhora = Date.now().toString();
-      //this.comentarioService.insertarComentario(this.comentario);
       
       this.coment.fecha  = new Date();
       this.coment.like = 0;
@@ -110,8 +108,6 @@ export class SysforumVerTemaComponent implements OnInit {
       this.likeRegisServicio.InsertarRegistroLike(this.likeRegist);
       this.comentarioServicio.updateLike(comen); 
     }
-
   }
-
 
 }
