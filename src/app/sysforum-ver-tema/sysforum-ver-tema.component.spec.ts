@@ -87,13 +87,19 @@ describe('SysforumVerTemaComponent', () => {
       expect(component.coment.id_usuario).not.toEqual('');
     });
 
-    it('Revisar que comentario tenga seteado nombre de usuari', function(){
+    it('Revisar que comentario tenga seteado nombre de usuario', function(){
       expect(component.coment.nombre_usuario).not.toEqual('');
     })
 
 
   });
-
+  it('Debe de mostra el nombre del autor del comentario', async(() => {
+    const fixture = TestBed.createComponent(SysforumVerTemaComponent);
+    const component = fixture.componentInstance;
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('h6').textContent).not.toContain('');
+  }));
 
   describe('test para un link por persona', function(){
   

@@ -71,8 +71,9 @@ export class SysforumVerTemaComponent implements OnInit {
     this.likeRegisServicio.getLikes().subscribe(CLike =>{
       this.likeRegistrado = CLike;
     });
-    this.setId('');
-    this.setName('');
+
+    this.coment.id_usuario=this.setId('');
+    this.coment.nombre_usuario=this.setName('');
   }
 
   setId(id: string){
@@ -99,8 +100,8 @@ export class SysforumVerTemaComponent implements OnInit {
     //Con esto inserto todos los datos
     //this.comentarioService.insertarComentario(comentarioForm.value)
     console.log('Agregando comentario');
-    if( this.coment.contenido !==''){
-      console.log(this.coment.$id_tema);
+    if( this.coment.contenido !=='' && this.coment.id_usuario!==''&&this.coment.nombre_usuario!==''){
+      console.log(this.coment.nombre_usuario);
       //this.comentario.fechayhora = Date.now().toString();
       //this.comentarioService.insertarComentario(this.comentario);
       
