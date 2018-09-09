@@ -88,5 +88,12 @@ describe('Componente Tema', () => {
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('h6').textContent).toContain(component.userName);
-  }));  
+  })); 
+  it('Validar insercion de nombre de usarua y id', () => { 
+    const fixture = TestBed.createComponent(SYSFORUMTEMAComponent);
+    const component = fixture.componentInstance;
+    fixture.detectChanges();
+    //const component = fixture.debugElement.nativeElement;
+    expect(component.onSubmit()).toEqual(true);
+  });  
 });
