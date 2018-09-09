@@ -31,6 +31,8 @@ export class SysforumVerTemaComponent implements OnInit {
     $id_tema : '',
     contenido : '',
     like: 0,
+    id_usuario: '',
+    nombre_usuario: ''
   };
 
   likeRegist : Like = {
@@ -38,8 +40,8 @@ export class SysforumVerTemaComponent implements OnInit {
     $id_usuario: ''
   }
 
-  userId : String;
-  userName : String;
+  userId : string;
+  userName : string;
 
   constructor(
     private route: ActivatedRoute,
@@ -73,7 +75,7 @@ export class SysforumVerTemaComponent implements OnInit {
     this.setName('');
   }
 
-  setId(id: String){
+  setId(id: string){
     if(id == ''){
       this.userId = '0';
       return this.userId;
@@ -83,7 +85,7 @@ export class SysforumVerTemaComponent implements OnInit {
     }
   }
 
-  setName(name: String){
+  setName(name: string){
     if(name == ''){
       this.userName = 'UsuarioPrueba';
       return this.userName;

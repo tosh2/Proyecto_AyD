@@ -81,6 +81,20 @@ describe('SysforumVerTemaComponent', () => {
     expect(component.bandera).toBeFalsy();
   })
 
+  describe('Validar que comentario tenga seteado el nombre y id de usuario', function(){
+  
+    it('Revisar que comentario tenga seteado id de usuario', function(){
+      expect(component.coment.id_usuario).not.toEqual('');
+    });
+
+    it('Revisar que comentario tenga seteado nombre de usuari', function(){
+      expect(component.coment.nombre_usuario).not.toEqual('');
+    })
+
+
+  });
+
+
   describe('test para un link por persona', function(){
   
     it('Revisar que la variable de sesion no sea nula', function(){
