@@ -15,8 +15,8 @@
           <div class="panel-body">
             <!-- List group -->
             <ul class="list-group">
-              <li *ngFor="let tema of temas" class="list-group-item">
-                    
+              <li *ngFor="let tema of temas" class="list-group-item">                
+                <b style="color: rgb(113, 115, 117)" class="panel-heading">{{tema.nombre_usuario}}</b><br>  
                 <b><h3>{{tema.title}}</h3></b><br>
                 <small style="color:rgb(51, 255, 0);">{{tema.tag}}</small><br>
                 {{tema.description}}<br>
