@@ -13,11 +13,16 @@ import { FooterComponent } from '../components/footer/footer.component';
 import { SidebarComponent } from '../components/sidebar/sidebar.component';
 import { NgbAlert } from '@ng-bootstrap/ng-bootstrap';
 import { SysforumLikeService } from '../sysforum-services/sysforum-like.service';
+import { By } from '@angular/platform-browser';
 
+import {DebugElement} from "@angular/core";
+import { expressionType } from '@angular/compiler/src/output/output_ast';
 describe('SysforumVerTemaComponent', () => {
 
   let component: SysforumVerTemaComponent;
   let fixture: ComponentFixture<SysforumVerTemaComponent>;
+  let comen: DebugElement;
+  let user: DebugElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -102,15 +107,45 @@ describe('SysforumVerTemaComponent', () => {
   }));
 
   describe('test para un link por persona', function(){
-  
+
     it('Revisar que la variable de sesion no sea nula', function(){
       expect(component.Vsesion).not.toEqual('0');
     });
 
     it('Revisar bandera de variable de sesion', function(){
       expect(component.bandera).toBeFalsy();
-    })
+    });
 
+    it('Metodo de darLike y su servicio esten definidos', 
+    inject([SysforumLikeService], (service: SysforumLikeService) => {
+      expect(service).toBeTruthy();
+      expect(service.InsertarRegistroLike).toBeDefined();
+      inject ([SysforumVerTemaComponent], (VerTema: SysforumVerTemaComponent) =>{
+        expect(VerTema.darLike(Event,VerTema.coment)).toBeDefined();
+        expect(VerTema.bandera).toBeTruthy();
+        })
+      })
+    );
 
+    it('Metodo darLike y su servicio sean llamados',
+      inject([SysforumLikeService], (service: SysforumLikeService) => {
+
+        inject ([SysforumVerTemaComponent], (VerTema: SysforumVerTemaComponent) =>{
+          const ser = fixture.debugElement.injector.get(SysforumVerTemaComponent);
+          const t =component.darLike(Event,comen);
+          const onClikDarLike = spyOn(ser, 'darLike');
+
+          fixture.debugElement.query(By.css('button')).triggerEventHandler('click',null);
+          
+          expect(onClikDarLike.apply).toHaveBeenCalled();
+
+          expect(t).toHaveBeenCalled();
+          expect(t).toContain(service.InsertarRegistroLike);
+          
+          expect(service.InsertarRegistroLike).arguments(Array,'coment#23','3');
+        })
+      })
+    );
+    
   });
 });

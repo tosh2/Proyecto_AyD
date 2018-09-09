@@ -28,14 +28,24 @@ exports.config = {
       strict: false,
       // <string[]> (type[:path]) specify the output format, optionally supply PATH to redirect formatter output (repeatable)
       format: [
-        'json:./e2e/reports/summary.json'
+        'json:./e2e/reports/summary.json',
+        'json:./e2e/reports/tmp/results.json',
+        
       ],
       // <boolean> invoke formatters without executing steps
       dryRun: false,
       // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
       compiler: []
     },
-  
+    // Here the magic happens
+    plugins: [{
+      package: 'protractor-multiple-cucumber-html-reporter-plugin',
+      options:{
+          // read the options part for more options
+          automaticallyGenerateReport: true,
+          removeExistingJsonReportFile: true
+      }
+    }],
     // Enable TypeScript for the tests
     onPrepare() {
       require('ts-node').register({
