@@ -85,5 +85,25 @@ describe('SysforumVerTemaComponent', () => {
       })
     );
 
+    it('Metodo darLike y su servicio sean llamados',
+      inject([SysforumLikeService], (service: SysforumLikeService) => {
+
+        inject ([SysforumVerTemaComponent], (VerTema: SysforumVerTemaComponent) =>{
+          const ser = fixture.debugElement.injector.get(SysforumVerTemaComponent);
+          const t =component.darLike(Event,comen);
+          const onClikDarLike = spyOn(ser, 'darLike');
+
+          fixture.debugElement.query(By.css('button')).triggerEventHandler('click',null);
+          
+          expect(onClikDarLike.apply).toHaveBeenCalled();
+
+          expect(t).toHaveBeenCalled();
+          expect(t).toContain(service.InsertarRegistroLike);
+          
+          expect(service.InsertarRegistroLike).arguments(Array,'coment#23','3');
+        })
+      })
+    );
+    
   });
 });
