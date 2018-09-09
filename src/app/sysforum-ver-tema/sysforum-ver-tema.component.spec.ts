@@ -98,7 +98,7 @@ describe('SysforumVerTemaComponent', () => {
     const component = fixture.componentInstance;
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h6').textContent).not.toContain('');
+    expect(compiled.querySelector('b').textContent).toContain(component.userName);
   }));
 
   describe('test para un link por persona', function(){
