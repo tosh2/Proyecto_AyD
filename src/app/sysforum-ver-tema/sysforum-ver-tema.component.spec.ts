@@ -65,7 +65,7 @@ describe('SysforumVerTemaComponent', () => {
     const component = fixture.componentInstance;
     fixture.detectChanges();
     //const component = fixture.debugElement.nativeElement;
-    expect(component.setNombre('')).toEqual('UsuarioPrueba');
+    expect(component.setName('')).toEqual('UsuarioPrueba');
   });
 
   it('Variable de sesion debe estar vacio al iniciar', function(){
