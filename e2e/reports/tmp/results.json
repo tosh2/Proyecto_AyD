@@ -8,10 +8,10 @@
     "uri": "e2e/features/dashboard.feature",
     "elements": [
       {
-        "id": "dashboard;a-first-scenario",
+        "id": "dashboard;carga-de-los-menus-del-panel-principal",
         "keyword": "Scenario",
         "line": 2,
-        "name": "A first scenario",
+        "name": "Carga de los menus del panel principal",
         "tags": [],
         "type": "scenario",
         "steps": [
@@ -28,28 +28,66 @@
           },
           {
             "arguments": [],
-            "keyword": "When ",
+            "keyword": "Given ",
             "line": 3,
-            "name": "yo cargue la pagina en el navegador",
+            "name": "entre a la aplicacion",
             "match": {
-              "location": "e2e/steps/dashboard.steps.ts:10"
+              "location": "e2e/steps/dashboard.steps.ts:9"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 4,
+            "name": "en el navegador se carga la pagina principal",
+            "match": {
+              "location": "e2e/steps/dashboard.steps.ts:12"
             },
             "result": {
               "status": "passed",
-              "duration": 10604000000
+              "duration": 4037000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 4,
-            "name": "ver un menu que se llame \"CREAR TEMA\"",
+            "line": 5,
+            "name": "ver un primer menu que se llame \"CREAR TEMA\"",
             "match": {
-              "location": "e2e/steps/dashboard.steps.ts:13"
+              "location": "e2e/steps/dashboard.steps.ts:15"
             },
             "result": {
               "status": "passed",
-              "duration": 130000000
+              "duration": 70000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 6,
+            "name": "ver un segundo menu que se llame \"LISTAR TEMAS\"",
+            "match": {
+              "location": "e2e/steps/dashboard.steps.ts:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 48000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "ver un tercer menu que se llame \"TEMAS\"",
+            "match": {
+              "location": "e2e/steps/dashboard.steps.ts:21"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 62000000
             }
           },
           {
