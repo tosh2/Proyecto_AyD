@@ -25,8 +25,8 @@ export class SYSFORUMTEMAComponent implements OnInit {
   constructor(public serviciotema: ServicioTemaService) { }
 
   ngOnInit() {
-    this.setId('');
-    this.setNombre('');
+    this.tema.id_usuario=this.setId('');
+    this.tema.nombre_usuario=this.setNombre('');
     
   }
 

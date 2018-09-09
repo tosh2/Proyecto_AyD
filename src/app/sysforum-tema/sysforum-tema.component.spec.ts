@@ -93,7 +93,10 @@ describe('Componente Tema', () => {
     const fixture = TestBed.createComponent(SYSFORUMTEMAComponent);
     const component = fixture.componentInstance;
     fixture.detectChanges();
+    component.tema.description = "prueba";
+    component.tema.title = "prueba";
     //const component = fixture.debugElement.nativeElement;
     expect(component.onSubmit()).toEqual(true);
   });  
 });
+
