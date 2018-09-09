@@ -18,6 +18,7 @@ export class SysforumListaTemasComponent implements OnInit {
       this.temaServicio.getTemas().subscribe(temas => {
 
         this.temas = temas;
+        
       });
   }
 }

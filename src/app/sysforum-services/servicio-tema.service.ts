@@ -20,22 +20,15 @@ import { Comentario } from '../sysforum-modelos/comentario';
 export class ServicioTemaService {
 
   temaCollection: AngularFirestoreCollection<Tema>;
+  temaUsuarioCollection: AngularFirestoreCollection<Tema>;
   temas: Observable<Tema[]>;
   TemaDoc: AngularFirestoreDocument<Tema>;
 
   constructor(public afs: AngularFirestore) {
-    this.temaCollection = this.afs.collection<Tema>('Temas');
-    this.temas = this.temaCollection.snapshotChanges().pipe(map(changes => {
-      return changes.map(a => {
-        const data = a.payload.doc.data() as Tema;
-        data.id = a.payload.doc.id;
-        return data;
-      });
-    }));
   }
 
   getTemas() {
-
+    this.temaCollection = this.afs.collection<Tema>('Temas');
     this.temas = this.temaCollection.snapshotChanges().pipe(map(changes => {
       return changes.map(a => {
         const data = a.payload.doc.data() as Tema;
@@ -46,9 +39,9 @@ export class ServicioTemaService {
     return this.temas;
   }
 
-  getTemasUsuario() {
-    
-    this.temas = this.temaCollection.snapshotChanges().pipe(map(changes => {
+  getTemasUsuario(usuario: string) {
+    this.temaUsuarioCollection = this.afs.collection<Tema>('Temas',ref => ref.where ('id_usuario','==',usuario));
+    this.temas = this.temaUsuarioCollection.snapshotChanges().pipe(map(changes => {
       return changes.map(a => {
         const data = a.payload.doc.data() as Tema;
         data.id = a.payload.doc.id;

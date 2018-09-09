@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Usuario} from '../../sysforum-modelos/model-usuario';
 
 declare interface RouteInfo {
     path: string;
@@ -26,6 +27,7 @@ export class SidebarComponent implements OnInit {
   menuItems: any[];
   userid: String;
   username: String;
+  public user : Usuario;
   constructor() { }
   seteovariableid(id: String) {
     if ( id == ' ') {
