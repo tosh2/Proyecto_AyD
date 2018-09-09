@@ -53,7 +53,7 @@ describe('SysforumMisTemasComponent', () => {
     fixture = TestBed.createComponent(SysforumMisTemasComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-    expect(component.usuario(' ')).toEqual('0');
+    expect(!component.usuario).toEqual('');
   });
   
 /*
