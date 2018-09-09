@@ -14,21 +14,24 @@ export class SYSFORUMTEMAComponent implements OnInit {
   tema: Tema = {
     title: '',
     description: '',
-    tag : ''
+    tag : '',
+    id_usuario: '',
+    nombre_usuario: ''
   };
 
-  userId: String;
-  userName: String;
+  userId: string;
+  userName: string;
 
   constructor(public serviciotema: ServicioTemaService) { }
 
   ngOnInit() {
     this.setId('');
     this.setNombre('');
+    
   }
 
 
-  setId(id: String){
+  setId(id: string){
     if(id == ''){
       this.userId = '0';
       return this.userId;
@@ -39,7 +42,7 @@ export class SYSFORUMTEMAComponent implements OnInit {
     }     
   }
 
-  setNombre(name: String){
+  setNombre(name: string){
     if(name == ''){
       this.userName = 'UsuarioPrueba';
       return this.userName;
@@ -52,13 +55,15 @@ export class SYSFORUMTEMAComponent implements OnInit {
 
   onSubmit() {
     console.log('agregando tema');
-      if (this.tema.title !== '' && this.tema.description !== '') {
+      if (this.tema.title !== '' && this.tema.description !== ''&&this.tema.nombre_usuario!==''&&this.tema.id_usuario!=='') {
         if(this.tema.tag == ''){this.tema.tag = '#sysforum';}
         this.serviciotema.addTema(this.tema);
         this.tema.title = '';
         this.tema.description = '';
         this.tema.tag = '';
+        return true;
       }
+      return false;
   }
 
 }
