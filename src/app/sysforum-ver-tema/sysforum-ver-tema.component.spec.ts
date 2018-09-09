@@ -54,6 +54,20 @@ describe('SysforumVerTemaComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('Validar variables de sesion ID por defecto', () => { 
+    const fixture = TestBed.createComponent(SysforumVerTemaComponent);
+    const component = fixture.componentInstance;
+    fixture.detectChanges();
+    expect(component.setId('')).toEqual('0');
+  });
+  it('Validar variables de sesion Nombre por defecto', () => { 
+    const fixture = TestBed.createComponent(SysforumVerTemaComponent);
+    const component = fixture.componentInstance;
+    fixture.detectChanges();
+    //const component = fixture.debugElement.nativeElement;
+    expect(component.setNombre('')).toEqual('UsuarioPrueba');
+  });
+
   it('Variable de sesion debe estar vacio al iniciar', function(){
     expect(component.Vsesion).toBeNull();
     expect(component.bandera).toBeFalsy();
