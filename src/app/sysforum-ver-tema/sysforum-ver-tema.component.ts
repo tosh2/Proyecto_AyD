@@ -108,8 +108,6 @@ export class SysforumVerTemaComponent implements OnInit {
       this.likeRegisServicio.InsertarRegistroLike(this.likeRegist);
       this.comentarioServicio.updateLike(comen); 
     }
-
   }
-
 
 }
