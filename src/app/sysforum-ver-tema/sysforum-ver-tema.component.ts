@@ -100,6 +100,7 @@ export class SysforumVerTemaComponent implements OnInit {
     //Con esto inserto todos los datos
     //this.comentarioService.insertarComentario(comentarioForm.value)
     console.log('Agregando comentario');
+
     if( this.coment.contenido !=='' && this.coment.id_usuario!==''&&this.coment.nombre_usuario!==''){
       console.log(this.coment.nombre_usuario);
       //this.comentario.fechayhora = Date.now().toString();
@@ -138,8 +139,6 @@ export class SysforumVerTemaComponent implements OnInit {
       this.likeRegisServicio.InsertarRegistroLike(this.likeRegist);
       this.comentarioServicio.updateLike(comen); 
     }
-
   }
-
 
 }

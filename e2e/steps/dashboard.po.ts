@@ -18,4 +18,9 @@ export class Dashboard {
         return element(by.css('p#segundomenu')).getText();
 
     }
+    getParagraphText3() {
+
+        return element(by.css('p#tercermenu')).getText();
+
+    }
 }
