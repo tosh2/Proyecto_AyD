@@ -41,7 +41,7 @@
           <ul class="list-group">
               <li *ngFor="let comen of comentario" class="list-group-item">
                   
-                    <h6>{{comen.fecha.toDate()| date: 'medium'}}</h6>
+                    {{comen.fecha.toDate()| date: 'medium'}}
                     <br>
                     <h3>{{comen.contenido}}</h3>
                   
