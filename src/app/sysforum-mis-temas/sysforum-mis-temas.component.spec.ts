@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed , inject} from '@angular/core/testing';
 
 import { SysforumMisTemasComponent } from './sysforum-mis-temas.component';
 
@@ -8,7 +8,6 @@ import { FormsModule } from '@angular/forms';
 import { environment } from '../../environments/environment';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { RouterTestingModule } from '@angular/router/testing';
-
 
 import {ServicioTemaService} from '../sysforum-services/servicio-tema.service';
 
@@ -56,9 +55,10 @@ describe('SysforumMisTemasComponent', () => {
     expect(!component.usuario).toEqual('');
   });
   
-/*
+});
+
 describe('Listar Temas',() =>{
- 
+ /*
   //kLSIR8yuTvSR7qCcmoRy
 
   it('deberia retornar un array de 3 posiciones',() =>{
@@ -88,6 +88,16 @@ describe('Listar Temas',() =>{
 
 });
   */
+
+it('Metodo darLike y su servicio sean llamados',
+inject([ServicioTemaService], (service: ServicioTemaService) => {
+
+    let usuarioActual = "0iuPkBQUSOkpgVKJaxqM";
+    expect(service.getTemasUsuario).arguments(usuarioActual);
+
+ 
+}));
+
 });
 
 
