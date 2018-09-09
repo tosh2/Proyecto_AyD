@@ -29,6 +29,7 @@ describe('ServicioTemaService', () => {
     expect(service).toBeTruthy();
   }));
 });
+/*
 
 describe('Listar Temas',() =>{
  
@@ -60,4 +61,4 @@ describe('Listar Temas',() =>{
   });
 
 });
-
+*/
