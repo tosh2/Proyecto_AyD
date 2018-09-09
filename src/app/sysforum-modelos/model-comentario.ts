@@ -7,4 +7,6 @@ export interface Comentario {
     contenido?: string;
     fecha?: Date;
     like: number;
+    id_usuario?: string;
+    nombre_usuario?: string;
 }
