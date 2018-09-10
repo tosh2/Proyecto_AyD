@@ -49,6 +49,7 @@ export class SidebarComponent implements OnInit {
   }
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
+    this.username = this.seteovariablenombre(' ');
   }
   isMobileMenu() {
       if ( window.innerWidth > 991) {
