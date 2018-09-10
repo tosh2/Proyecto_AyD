@@ -115,7 +115,7 @@ export class SysforumVerTemaComponent implements OnInit {
   }
 
   darLike(even, comen){
-    this.Vsesion = '2';
+    this.Vsesion = this.userId;
     console.log(this.Vsesion);
     console.log(comen);
 
