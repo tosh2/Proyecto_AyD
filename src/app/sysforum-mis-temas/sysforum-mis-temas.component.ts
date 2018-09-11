@@ -27,5 +27,4 @@ export class SysforumMisTemasComponent implements OnInit {
     });
   }
 
-
 }
