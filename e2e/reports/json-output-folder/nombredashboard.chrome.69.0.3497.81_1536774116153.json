@@ -1,17 +1,17 @@
 [
   {
     "keyword": "Feature",
-    "name": "Dashboard",
+    "name": "nombredashboard",
     "line": 1,
-    "id": "dashboard",
+    "id": "nombredashboard",
     "tags": [],
-    "uri": "e2e/features/dashboard.feature",
+    "uri": "e2e/features/nombredasboard.feature",
     "elements": [
       {
-        "id": "dashboard;carga-de-los-menus-del-panel-principal",
+        "id": "nombredashboard;cargar-el-nombre-en-el-panel-principal",
         "keyword": "Scenario",
         "line": 2,
-        "name": "Carga de los menus del panel principal",
+        "name": "cargar el nombre en el panel principal",
         "tags": [],
         "type": "scenario",
         "steps": [
@@ -22,17 +22,26 @@
               "location": "e2e/steps/dashboard.steps.ts:7"
             },
             "result": {
-              "status": "passed",
-              "duration": 1000000
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e/steps/nombredashboard.steps.ts:7"
+            },
+            "result": {
+              "status": "passed"
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
             "line": 3,
-            "name": "entre a la aplicacion",
+            "name": "este logueado en la aplicacion",
             "match": {
-              "location": "e2e/steps/dashboard.steps.ts:9"
+              "location": "e2e/steps/nombredashboard.steps.ts:9"
             },
             "result": {
               "status": "passed"
@@ -42,52 +51,26 @@
             "arguments": [],
             "keyword": "When ",
             "line": 4,
-            "name": "en el navegador se carga la pagina principal",
+            "name": "en panel me mostrara la pagina principal",
             "match": {
-              "location": "e2e/steps/dashboard.steps.ts:12"
+              "location": "e2e/steps/nombredashboard.steps.ts:12"
             },
             "result": {
               "status": "passed",
-              "duration": 4037000000
+              "duration": 1027000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 5,
-            "name": "ver un primer menu que se llame \"CREAR TEMA\"",
+            "name": "ver el nombre de usuario que se llame \"USUARIODEPRUEBA\"",
             "match": {
-              "location": "e2e/steps/dashboard.steps.ts:15"
+              "location": "e2e/steps/nombredashboard.steps.ts:15"
             },
             "result": {
               "status": "passed",
-              "duration": 70000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 6,
-            "name": "ver un segundo menu que se llame \"LISTAR TEMAS\"",
-            "match": {
-              "location": "e2e/steps/dashboard.steps.ts:18"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 48000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 7,
-            "name": "ver un tercer menu que se llame \"TEMAS\"",
-            "match": {
-              "location": "e2e/steps/dashboard.steps.ts:21"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 62000000
+              "duration": 54000000
             }
           },
           {
