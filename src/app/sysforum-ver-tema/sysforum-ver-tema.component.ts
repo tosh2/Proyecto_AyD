@@ -27,7 +27,8 @@ export class SysforumVerTemaComponent implements OnInit {
   bandera: boolean;
   likeRegistrado : Like[];
   closed:boolean = false;
-  banderafavorito:boolean = false;
+  banderafav:boolean = false;
+  favoritosRegistrado: TemaFavorito[];
 
   coment: Comentario ={
     $id_tema : '',
@@ -35,6 +36,12 @@ export class SysforumVerTemaComponent implements OnInit {
     like: 0,
     id_usuario: '',
     nombre_usuario: ''
+  };
+
+  temFav: TemaFavorito ={
+    $id_tema: '',
+    $id_usuario: '',
+    banderaFavorito: false
   };
 
   likeRegist : Like = {
@@ -55,6 +62,7 @@ export class SysforumVerTemaComponent implements OnInit {
     this.Nombre = "";
     this.Descri = "";
     this.Identi = "";
+    this.banderafav = false;
     this.Tag = "";
     this.Vsesion = null;
     this.bandera = false;
@@ -76,6 +84,9 @@ export class SysforumVerTemaComponent implements OnInit {
       this.likeRegistrado = CLike;
     });
 
+    this.temaFavoritoServicio.getFavoritos().subscribe(CFav =>{
+      this.favoritosRegistrado = CFav;
+    });
     this.coment.id_usuario=this.setId('');
     this.coment.nombre_usuario=this.setName('');
   }
@@ -143,6 +154,11 @@ export class SysforumVerTemaComponent implements OnInit {
       this.likeRegisServicio.InsertarRegistroLike(this.likeRegist);
       this.comentarioServicio.updateLike(comen); 
     }
+  }
+
+  darFavorito(even, fav){
+    
+ 
   }
 
 }
