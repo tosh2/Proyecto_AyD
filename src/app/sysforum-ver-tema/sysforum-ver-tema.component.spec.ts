@@ -14,6 +14,7 @@ import { SidebarComponent } from '../components/sidebar/sidebar.component';
 import { NgbAlert } from '@ng-bootstrap/ng-bootstrap';
 import { SysforumLikeService } from '../sysforum-services/sysforum-like.service';
 import { By } from '@angular/platform-browser';
+import {SysforumTemaFavoritoService} from '../sysforum-services/sysforum-tema-favorito.service';
 
 import {DebugElement} from "@angular/core";
 import { expressionType } from '@angular/compiler/src/output/output_ast';
@@ -155,6 +156,13 @@ describe('SysforumVerTemaComponent', () => {
       fixture.detectChanges();
       const Favorito = fixture.nativeElement.querySelector('#button2');
       expect(Favorito.id).toEqual("button2");
+    });
+    it('Revisar que la variable de sesion no sea nula', function(){
+      expect(component.Vsesion).not.toEqual('0');
+    });
+
+    it('Revisar bandera de favorito', function(){
+      expect(component.banderafavorito).toBeFalsy();
     });
     
   });

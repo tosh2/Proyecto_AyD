@@ -7,7 +7,8 @@ import { NgForm } from '@angular/forms';
 import { Timestamp } from 'rxjs/internal/operators/timestamp';
 import { FirebaseApp } from 'angularfire2';
 import { SysforumLikeService } from '../sysforum-services/sysforum-like.service';
-
+import {TemaFavorito} from '../sysforum-modelos/model-tema-favorito';
+import { SysforumTemaFavoritoService } from '../sysforum-services/sysforum-tema-favorito.service';
 @Component({
   selector: 'app-sysforum-ver-tema',
   templateUrl: './sysforum-ver-tema.component.html',
@@ -26,6 +27,7 @@ export class SysforumVerTemaComponent implements OnInit {
   bandera: boolean;
   likeRegistrado : Like[];
   closed:boolean = false;
+  banderafavorito:boolean = false;
 
   coment: Comentario ={
     $id_tema : '',
@@ -47,6 +49,8 @@ export class SysforumVerTemaComponent implements OnInit {
     private route: ActivatedRoute,
     public comentarioServicio: SysforumListarComentariosService,
     public likeRegisServicio: SysforumLikeService,
+    public temaFavoritoServicio: SysforumTemaFavoritoService, 
+  
   ){ 
     this.Nombre = "";
     this.Descri = "";
