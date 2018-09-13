@@ -164,6 +164,16 @@ describe('SysforumVerTemaComponent', () => {
     it('Revisar bandera de favorito', function(){
       expect(component.banderafavorito).toBeFalsy();
     });
+    it('Metodo de marcarFavorito y su servicio esten definidos', 
+    inject([SysforumTemaFavoritoService], (service: SysforumTemaFavoritoService) => {
+      expect(service).toBeTruthy();
+      expect(service.InsertarRegistroFavorito).toBeDefined();
+      inject ([SysforumVerTemaComponent], (VerTema: SysforumVerTemaComponent) =>{
+        expect(VerTema.darFavorito(Event,VerTema.Favorito)).toBeDefined();
+        expect(VerTema.banderafavorito).toBeTruthy();
+        })
+      })
+    );
     
   });
   
