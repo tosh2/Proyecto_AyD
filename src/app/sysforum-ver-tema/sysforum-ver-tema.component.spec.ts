@@ -148,4 +148,15 @@ describe('SysforumVerTemaComponent', () => {
     );
     
   });
+
+  describe('test para boton de tema favorito', function(){
+    it('Revisar que el componente del boton para favorito exista Html', () => {
+      const fixture = TestBed.createComponent(SysforumVerTemaComponent);
+      fixture.detectChanges();
+      const Favorito = fixture.nativeElement.querySelector('#button2');
+      expect(Favorito.id).toEqual("button2");
+    });
+    
+  });
+  
 });
