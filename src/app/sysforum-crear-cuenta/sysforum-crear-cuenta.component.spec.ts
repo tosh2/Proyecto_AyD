@@ -14,7 +14,6 @@ import { SysforumCrearCuentaService } from '../sysforum-services/sysforum-crear-
 import { APP_BASE_HREF } from '@angular/common';
 import { USE_VALUE } from '@angular/core/src/di/injector';
 import { AppComponent } from '../app.component';
-import { SysforumListaTemasComponent } from '../sysforum-lista-temas/sysforum-lista-temas.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { NavbarComponent } from '../components/navbar/navbar.component';
 import { SidebarComponent } from '../components/sidebar/sidebar.component';
@@ -66,14 +65,13 @@ describe('SysforumCrearCuentaComponent', () => {
   });
 
   it('Deberia verificar los atributos de el modelo.', () =>  {
-    expect(component.usuario.id).toBe('');
     expect(component.usuario.nombre).toBe('');
     expect(component.usuario.usuario).toBe('');
     expect(component.usuario.clave).toBe('');
   });
   
   it('Deberia verificar servicio de crear para crear usuario.', () =>  {
-    expect(component.SysforumCrearCuentaService).toBeTruthy();
+    expect(component.servicioCrearCuenta).toBeTruthy();
   });
 
   it('Verificacion de Formulario Html', () =>  {
@@ -103,4 +101,3 @@ describe('SysforumCrearCuentaComponent', () => {
 
 });
 
-// nuevo commit, espero este si hahah

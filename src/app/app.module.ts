@@ -26,6 +26,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { LoginComponent } from './login/login.component';
 import { SysforumLoginComponent } from './sysforum-login/sysforum-login.component';
 import { SysforumMisTemasComponent } from './sysforum-mis-temas/sysforum-mis-temas.component';
+import { SysforumCrearCuentaComponent } from './sysforum-crear-cuenta/sysforum-crear-cuenta.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { SysforumMisTemasComponent } from './sysforum-mis-temas/sysforum-mis-tem
     AdminLayoutComponent,
     LoginComponent,
     SysforumLoginComponent,
-    SysforumMisTemasComponent
+    SysforumMisTemasComponent,
+    SysforumCrearCuentaComponent
 
   ],
   imports: [
