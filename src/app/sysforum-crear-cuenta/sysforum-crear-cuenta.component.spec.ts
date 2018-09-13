@@ -28,13 +28,6 @@ describe('SysforumCrearCuentaComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SysforumCrearCuentaComponent ]
-    })
-    .compileComponents();
-  }));
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
       declarations: [ SysforumCrearCuentaComponent, AppComponent, 
       NavbarComponent, SidebarComponent, FooterComponent ],
       imports: [FormsModule,
