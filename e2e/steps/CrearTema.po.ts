@@ -4,13 +4,10 @@ export class CrearTema {
 
     navigateTo() {
 
-        return browser.get('/');
+        return browser.get('/CrearTema');
 
     }
-
-    getNombreTema() {
-
-        return element(by.css('p.primermenu')).getText();
-
-    }
+    public setnombretema = function(text: string) {
+       return element(by.id('nombre')).sendKeys(text);
+    };
 }
