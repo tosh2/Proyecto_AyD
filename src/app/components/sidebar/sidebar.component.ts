@@ -10,8 +10,9 @@ export const ROUTES: RouteInfo[] = [
 
     { path: '/CrearTema', title: 'Crear Tema', class:'primermenu' },
     { path: '/ListarTemas', title: 'Listar Temas', class: 'segundomenu' },
-    { path: '/ListarMisTemas', title: 'Temas',  class: 'tercermenu' }
-
+    { path: '/ListarMisTemas', title: 'Temas',  class: 'tercermenu' },
+    { path: '/CrearUsuario', title: 'Crear Usuario',  class: 'cuartomenu' }
+    
     // { path: '/notifications', title: 'Notifications',  icon:'ui-1_bell-53', class: '' },
     // { path: '/user-profile', title: 'User Profile',  icon:'users_single-02', class: '' },
     // { path: '/table-list', title: 'Table List',  icon:'design_bullet-list-67', class: '' },
