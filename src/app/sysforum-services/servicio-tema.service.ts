@@ -25,6 +25,7 @@ export class ServicioTemaService {
   TemaDoc: AngularFirestoreDocument<Tema>;
 
   constructor(public afs: AngularFirestore) {
+    this.temaCollection = this.afs.collection<Tema>('Temas');
   }
 
   getTemas() {
