@@ -11,6 +11,7 @@ import { SysforumVerTemaComponent } from './sysforum-ver-tema/sysforum-ver-tema.
 import { SYSFORUMTEMAComponent } from './sysforum-tema/sysforum-tema.component';
 import { SysforumPageNotFoundComponent } from './sysforum-page-not-found/sysforum-page-not-found.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { SysforumCrearCuentaComponent } from './sysforum-crear-cuenta/sysforum-crear-cuenta.component';
 
 
 //Rutas que se utilizaran
@@ -31,6 +32,7 @@ const routes: Routes = [
   },
   { path: 'ListarTemas', component: SysforumListaTemasComponent },
   { path: 'ListarMisTemas', component: SysforumMisTemasComponent },
+  { path: 'CrearUsuario', component: SysforumCrearCuentaComponent },
   { path: 'VerTemas/:id/:name/:des/:tag', component: SysforumVerTemaComponent },
   { path: '**', component: SysforumPageNotFoundComponent},
 

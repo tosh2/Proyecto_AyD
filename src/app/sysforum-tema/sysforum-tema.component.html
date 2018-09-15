@@ -10,22 +10,22 @@
       <div class="panel panel-danger">
         <!-- Default panel contents -->
         <div style="background-color: lightslategray" class="panel-heading">
-          <h3 style="color: white">CREAR UN TEMA</h3>
+          <h3 style="color: white" id="titulotema">CREAR UN TEMA</h3>
         </div>
 
         <div class="panel-body">
             <form (ngSubmit)="onSubmit()">
               <h3>Tema: </h3>
-              <input type="text" name="title" [(ngModel)]="tema.title" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+              <input type="text" name="title" id="nombre" [(ngModel)]="tema.title" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
               <h3>Descripcion: </h3>
-              <input type="text" name="descripcion" [(ngModel)]="tema.description" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+              <input type="text" name="descripcion" id="descripcion" [(ngModel)]="tema.description" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
               <h3>Tag</h3>
-              <input type="text" name="tag" [(ngModel)]="tema.tag" placeholder="#descripcion, #otraDescripcion" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">            
+              <input type="text" name="tag" id="tag" [(ngModel)]="tema.tag" placeholder="#descripcion, #otraDescripcion" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">            
               
               
               <br>
             
-              <input type="submit" class="btn btn-primary">
+              <input type="submit" id="crear" class="btn btn-primary">
             </form>
         </div>
       </div>
