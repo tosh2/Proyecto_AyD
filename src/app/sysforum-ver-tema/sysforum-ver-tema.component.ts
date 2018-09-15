@@ -33,7 +33,8 @@ export class SysforumVerTemaComponent implements OnInit {
   closed:boolean = false;
   banderafav:boolean = false;
   favoritosRegistrado: TemaFavorito[] = null;
-  subscripcionFavorito: Subscription
+  subscripcionFavorito: Subscription;
+  subscripcionLike: Subscription;
   coment: Comentario ={
     $id_tema : '',
     contenido : '',
@@ -62,8 +63,8 @@ export class SysforumVerTemaComponent implements OnInit {
     public likeRegisServicio: SysforumLikeService,
     public temaFavoritoServicio: SysforumTemaFavoritoService
 
-  
-  ){ 
+
+  ){
     this.Nombre = "";
     this.Descri = "";
     this.Identi = "";
@@ -74,16 +75,16 @@ export class SysforumVerTemaComponent implements OnInit {
 
 
     console.log( "Parent ID changed:", this.route.snapshot.paramMap.get('name') );
-    
+
   }
   ngOnInit(): void {
-  
+
     this.Nombre = this.route.snapshot.paramMap.get('name');
     this.Titulo += this.Nombre;
     this.Descri = this.route.snapshot.paramMap.get('des');
     this.Identi = this.route.snapshot.paramMap.get('id');
     this.Tag = this.route.snapshot.paramMap.get('tag');
-    
+
   this.subscripcionFavorito =  this.temaFavoritoServicio.getFavoritos()
     .subscribe((CFav) =>{
 
@@ -96,11 +97,11 @@ export class SysforumVerTemaComponent implements OnInit {
     });
     this.coment.$id_tema = this.route.snapshot.paramMap.get('id');
 
-    this.likeRegisServicio.getLikes().subscribe(CLike =>{
-      console.log("entro en like")
+  this.subscripcionLike =  this.likeRegisServicio.getLikes().subscribe(CLike =>{
+
       this.likeRegistrado = CLike;
     });
-    
+
 
     this.route.url
       .subscribe(url => console.log('The URL changed to: ' + url));
@@ -111,10 +112,11 @@ export class SysforumVerTemaComponent implements OnInit {
   }
   ngOnDestroy() {
    this.subscripcionFavorito.unsubscribe();
+   this.subscripcionLike.unsubscribe();
   }
   setId(id: string){
     if(id == ''){
-      this.userId = '0';
+      this.userId = '8';
       return this.userId;
     }else{
       this.userId = id;
@@ -141,7 +143,7 @@ export class SysforumVerTemaComponent implements OnInit {
       console.log(this.coment.nombre_usuario);
       //this.comentario.fechayhora = Date.now().toString();
       //this.comentarioService.insertarComentario(this.comentario);
-      
+
       this.coment.fecha  = new Date();
       this.coment.like = 0;
       this.comentarioServicio.insertarComentario(this.coment);
@@ -173,7 +175,7 @@ export class SysforumVerTemaComponent implements OnInit {
       this.likeRegist.$id_comentario = comen.id;
       this.likeRegist.$id_usuario = this.Vsesion;
       this.likeRegisServicio.InsertarRegistroLike(this.likeRegist);
-      this.comentarioServicio.updateLike(comen); 
+      this.comentarioServicio.updateLike(comen);
     }
   }
 
@@ -196,9 +198,9 @@ export class SysforumVerTemaComponent implements OnInit {
       this.temFav.$id_tema = this.Identi;
       this.temFav.$id_usuario = this.userId;
       this.temaFavoritoServicio.InsertarRegistroFavorito(this.temFav);
-     
+
     }
- 
+
   }
 
 }
