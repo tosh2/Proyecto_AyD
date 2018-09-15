@@ -118,7 +118,7 @@ export class SysforumVerTemaComponent implements OnInit {
 
   setId(id: string){
     if(id == ''){
-      this.userId = '8';
+      this.userId = '0';
       return this.userId;
     }else{
       this.userId = id;
