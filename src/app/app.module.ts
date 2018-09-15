@@ -20,6 +20,7 @@ import { SysforumVerTemaComponent } from './sysforum-ver-tema/sysforum-ver-tema.
 import { SysforumPageNotFoundComponent } from './sysforum-page-not-found/sysforum-page-not-found.component';
 import {SysforumListarComentariosService} from './sysforum-services/sysforum-listar-comentarios.service';
 import {SysforumLikeService} from './sysforum-services/sysforum-like.service';
+import {AuthenticationService} from './sysforum-services/authentication.service';
 
 import { ComponentsModule } from './components/components.module';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
@@ -27,6 +28,7 @@ import { LoginComponent } from './login/login.component';
 import { SysforumLoginComponent } from './sysforum-login/sysforum-login.component';
 import { SysforumMisTemasComponent } from './sysforum-mis-temas/sysforum-mis-temas.component';
 import { SysforumCrearCuentaComponent } from './sysforum-crear-cuenta/sysforum-crear-cuenta.component';
+
 
 @NgModule({
   declarations: [
@@ -58,7 +60,8 @@ import { SysforumCrearCuentaComponent } from './sysforum-crear-cuenta/sysforum-c
   ],
   providers: [
     ServicioTemaService, AngularFireDatabase, AngularFirestore,
-    SysforumListarComentariosService, SysforumLikeService
+    SysforumListarComentariosService, SysforumLikeService,
+    AuthenticationService
   ],
   bootstrap: [AppComponent]
 })
