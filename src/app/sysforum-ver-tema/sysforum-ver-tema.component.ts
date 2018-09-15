@@ -114,6 +114,8 @@ export class SysforumVerTemaComponent implements OnInit {
    this.subscripcionFavorito.unsubscribe();
    this.subscripcionLike.unsubscribe();
   }
+
+
   setId(id: string){
     if(id == ''){
       this.userId = '8';

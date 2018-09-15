@@ -11,10 +11,27 @@ export class SysforumCrearCuentaService {
   Collection: AngularFirestoreCollection<Usuario>;
   UsuarioCollection: AngularFirestoreCollection<Usuario>;
   usuarios: Observable<Usuario[]>;
-  usuariosC:Usuario[];
+  usuariosC : Array<Usuario>;
 
   constructor(public afs: AngularFirestore) {
     this.Collection = this.afs.collection<Usuario>('Usuarios');
+    this.UsuarioCollection = this.afs.collection<Usuario>('Usuarios');
+
+    this.usuarios = new Observable();
+    this.UsuarioCollection = this.afs.collection<Usuario>('Usuarios'
+    ,ref => ref.where ('usuario','==',"usuario"));
+    this.usuarios = this.UsuarioCollection.snapshotChanges().pipe(map(changes => {
+      return changes.map(a => {
+        const data = a.payload.doc.data() as Usuario;
+        data.id = a.payload.doc.id;
+        return data;
+      });
+    }));
+
+    this.usuarios.subscribe(users => {
+      this.usuariosC = users;
+    });
+
   }
 
 
@@ -26,7 +43,8 @@ export class SysforumCrearCuentaService {
 
   getExists(usuario: string){
     this.usuarios = new Observable();
-    this.UsuarioCollection = this.afs.collection<Usuario>('Usuarios',ref => ref.where ('usuario','==',usuario));
+    this.UsuarioCollection = this.afs.collection<Usuario>('Usuarios'
+    ,ref => ref.where ('usuario','==',usuario));
     this.usuarios = this.UsuarioCollection.snapshotChanges().pipe(map(changes => {
       return changes.map(a => {
         const data = a.payload.doc.data() as Usuario;
@@ -35,15 +53,19 @@ export class SysforumCrearCuentaService {
       });
     }));
 
-      this.usuarios.subscribe(users => {        
+
+      this.usuarios.subscribe(users => {
         this.usuariosC = users;
       });
 
-      if(!(this.usuariosC.length == 0)){
-        return true;
-      }else{
+        console.log(this.usuariosC.length);
+
+      if((this.usuariosC.length == 0)){
         return false;
+      }else{
+        return true;
       }
+
   }
-  
+
 }
