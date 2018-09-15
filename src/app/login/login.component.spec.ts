@@ -22,10 +22,22 @@ describe('LoginComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  it('Despligue de Sidebar', () => {
+  it('Despligue de login', () => {
     fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
     expect(component).toBeTruthy();
+  });
+  it('Verificacion de Formulario Html', () =>  {
+    const htmlcomponent = fixture.debugElement.nativeElement;
+    expect(htmlcomponent.querySelector('form')).toBeTruthy();
+  });
+  it('Verificacion  inputs Html', () =>  {
+    const htmlcomponent = fixture.debugElement.nativeElement;
+    expect(htmlcomponent.querySelector('input')).toBeTruthy();
+  });
+  it('Verificacion  boton Html', () =>  {
+    const htmlcomponent = fixture.debugElement.nativeElement;
+    expect(htmlcomponent.querySelector('button')).toBeTruthy();
   });
 });
