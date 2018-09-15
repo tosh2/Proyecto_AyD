@@ -22,6 +22,9 @@ import {SysforumListarComentariosService} from './sysforum-services/sysforum-lis
 import {SysforumLikeService} from './sysforum-services/sysforum-like.service';
 import {AuthenticationService} from './sysforum-services/authentication.service';
 
+import {SysforumTemaFavoritoService} from './sysforum-services/sysforum-tema-favorito.service';
+
+
 import { ComponentsModule } from './components/components.module';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { LoginComponent } from './login/login.component';
@@ -60,7 +63,7 @@ import { SysforumCrearCuentaComponent } from './sysforum-crear-cuenta/sysforum-c
   ],
   providers: [
     ServicioTemaService, AngularFireDatabase, AngularFirestore,
-    SysforumListarComentariosService, SysforumLikeService,
+    SysforumListarComentariosService, SysforumLikeService,SysforumTemaFavoritoService,
     AuthenticationService
   ],
   bootstrap: [AppComponent]

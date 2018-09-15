@@ -25,10 +25,11 @@ export class ServicioTemaService {
   TemaDoc: AngularFirestoreDocument<Tema>;
 
   constructor(public afs: AngularFirestore) {
+    this.temaCollection = this.afs.collection<Tema>('Temas');
   }
 
   getTemas() {
-    this.temaCollection = this.afs.collection<Tema>('Temas');
+    this.temaCollection = this.afs.collection<Tema>('Temas');   
     this.temas = this.temaCollection.snapshotChanges().pipe(map(changes => {
       return changes.map(a => {
         const data = a.payload.doc.data() as Tema;

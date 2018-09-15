@@ -16,6 +16,7 @@ export class SysforumCrearCuentaComponent implements OnInit {
     usuario: '',
     clave : ''
   };
+  usuarios : Usuario[];
 
   constructor(public servicioCrearCuenta: SysforumCrearCuentaService) { }
 
@@ -24,14 +25,28 @@ export class SysforumCrearCuentaComponent implements OnInit {
 
   onSubmit() {
     console.log('agregando tema');
-      if (this.usuario.nombre != '' 
-        && this.usuario.usuario != '' 
+      if (this.usuario.nombre != ''
+        && this.usuario.usuario != ''
           && this.usuario.clave != '') {
 
-        this.servicioCrearCuenta.crearUsuario(this.usuario);
-        this.usuario.nombre = '';
-        this.usuario.usuario = '';
-        this.usuario.clave = '';
+
+              var valor = this.servicioCrearCuenta.getExists(this.usuario.usuario);
+
+              if(valor){
+
+                  this.usuario.usuario = '';
+
+              }else{
+
+                this.servicioCrearCuenta.crearUsuario(this.usuario);
+                this.usuario.nombre = '';
+                this.usuario.usuario = '';
+                this.usuario.clave = '';
+                return true;
+              }
+
+
+
         return true;
       }
       return false;

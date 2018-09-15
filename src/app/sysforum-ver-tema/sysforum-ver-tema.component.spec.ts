@@ -14,6 +14,7 @@ import { SidebarComponent } from '../components/sidebar/sidebar.component';
 import { NgbAlert } from '@ng-bootstrap/ng-bootstrap';
 import { SysforumLikeService } from '../sysforum-services/sysforum-like.service';
 import { By } from '@angular/platform-browser';
+import {SysforumTemaFavoritoService} from '../sysforum-services/sysforum-tema-favorito.service';
 
 import {DebugElement} from "@angular/core";
 import { expressionType } from '@angular/compiler/src/output/output_ast';
@@ -22,6 +23,7 @@ describe('SysforumVerTemaComponent', () => {
   let component: SysforumVerTemaComponent;
   let fixture: ComponentFixture<SysforumVerTemaComponent>;
   let comen: DebugElement;
+  let fav : DebugElement;
   let user: DebugElement;
 
   beforeEach(async(() => {
@@ -148,4 +150,50 @@ describe('SysforumVerTemaComponent', () => {
     );
     
   });
+
+  describe('test para boton de tema favorito', function(){
+    it('Revisar que el componente del boton para favorito exista Html', () => {
+      const fixture = TestBed.createComponent(SysforumVerTemaComponent);
+      fixture.detectChanges();
+      const Favorito = fixture.nativeElement.querySelector('#button2');
+      expect(Favorito.id).toEqual("button2");
+    });
+    it('Revisar que la variable de sesion no sea nula', function(){
+      expect(component.Vsesion).not.toEqual('0');
+    });
+
+    it('Revisar bandera de favorito', function(){
+      expect(component.banderafav).toBeFalsy();
+    });
+    it('Metodo de marcarFavorito y su servicio esten definidos', 
+    inject([SysforumTemaFavoritoService], (service: SysforumTemaFavoritoService) => {
+      expect(service).toBeTruthy();
+      expect(service.InsertarRegistroFavorito).toBeDefined();
+      inject ([SysforumVerTemaComponent], (VerTema: SysforumVerTemaComponent) =>{
+        expect(VerTema.darFavorito(Event,VerTema.temFav)).toBeDefined();
+        expect(VerTema.banderafav).toBeTruthy();
+        })
+      })
+    );
+    it('Metodo darFavorito y su servicio sean llamados',
+      inject([SysforumTemaFavoritoService], (service: SysforumTemaFavoritoService) => {
+
+        inject ([SysforumVerTemaComponent], (VerTema: SysforumVerTemaComponent) =>{
+          const ser = fixture.debugElement.injector.get(SysforumVerTemaComponent);
+          const t =component.darFavorito(Event,fav);
+          const onClikDarLike = spyOn(ser, 'darFavorito');
+
+          fixture.debugElement.query(By.css('button')).triggerEventHandler('click',null);
+          
+          expect(onClikDarLike.apply).toHaveBeenCalled();
+
+          expect(t).toHaveBeenCalled();
+          expect(t).toContain(service.InsertarRegistroFavorito);
+          
+          expect(service.InsertarRegistroFavorito).arguments(Array,'tema1#23','3',true);
+        })
+      })
+    );
+  });
+  
 });
