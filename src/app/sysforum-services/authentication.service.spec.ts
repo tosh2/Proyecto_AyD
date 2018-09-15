@@ -1,11 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
-
+import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 import { AuthenticationService } from './authentication.service';
+import { AngularFirestore } from 'angularfire2/firestore';
 
 describe('AuthenticationService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [AuthenticationService]
+      imports:[AngularFireDatabaseModule, 
+              
+            ],
+      providers: [AuthenticationService, AngularFireDatabase, AngularFirestore]
     });
   });
 
