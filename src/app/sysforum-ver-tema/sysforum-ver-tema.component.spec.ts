@@ -23,6 +23,7 @@ describe('SysforumVerTemaComponent', () => {
   let component: SysforumVerTemaComponent;
   let fixture: ComponentFixture<SysforumVerTemaComponent>;
   let comen: DebugElement;
+  let fav : DebugElement;
   let user: DebugElement;
 
   beforeEach(async(() => {
@@ -174,7 +175,25 @@ describe('SysforumVerTemaComponent', () => {
         })
       })
     );
-    
+    it('Metodo darFavorito y su servicio sean llamados',
+      inject([SysforumTemaFavoritoService], (service: SysforumTemaFavoritoService) => {
+
+        inject ([SysforumVerTemaComponent], (VerTema: SysforumVerTemaComponent) =>{
+          const ser = fixture.debugElement.injector.get(SysforumVerTemaComponent);
+          const t =component.darFavorito(Event,fav);
+          const onClikDarLike = spyOn(ser, 'darFavorito');
+
+          fixture.debugElement.query(By.css('button')).triggerEventHandler('click',null);
+          
+          expect(onClikDarLike.apply).toHaveBeenCalled();
+
+          expect(t).toHaveBeenCalled();
+          expect(t).toContain(service.InsertarRegistroFavorito);
+          
+          expect(service.InsertarRegistroFavorito).arguments(Array,'tema1#23','3',true);
+        })
+      })
+    );
   });
   
 });
