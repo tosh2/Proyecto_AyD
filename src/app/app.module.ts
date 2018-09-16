@@ -20,7 +20,10 @@ import { SysforumVerTemaComponent } from './sysforum-ver-tema/sysforum-ver-tema.
 import { SysforumPageNotFoundComponent } from './sysforum-page-not-found/sysforum-page-not-found.component';
 import {SysforumListarComentariosService} from './sysforum-services/sysforum-listar-comentarios.service';
 import {SysforumLikeService} from './sysforum-services/sysforum-like.service';
+import {AuthenticationService} from './sysforum-services/authentication.service';
+
 import {SysforumTemaFavoritoService} from './sysforum-services/sysforum-tema-favorito.service';
+
 
 import { ComponentsModule } from './components/components.module';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
@@ -29,6 +32,7 @@ import { SysforumLoginComponent } from './sysforum-login/sysforum-login.componen
 import { SysforumMisTemasComponent } from './sysforum-mis-temas/sysforum-mis-temas.component';
 import { SysforumCrearCuentaComponent } from './sysforum-crear-cuenta/sysforum-crear-cuenta.component';
 import { SysforumListarFavoritosComponent } from './sysforum-listar-favoritos/sysforum-listar-favoritos.component';
+
 
 @NgModule({
   declarations: [
@@ -61,7 +65,8 @@ import { SysforumListarFavoritosComponent } from './sysforum-listar-favoritos/sy
   ],
   providers: [
     ServicioTemaService, AngularFireDatabase, AngularFirestore,
-    SysforumListarComentariosService, SysforumLikeService, SysforumTemaFavoritoService
+    SysforumListarComentariosService, SysforumLikeService,SysforumTemaFavoritoService,
+    AuthenticationService
   ],
   bootstrap: [AppComponent]
 })

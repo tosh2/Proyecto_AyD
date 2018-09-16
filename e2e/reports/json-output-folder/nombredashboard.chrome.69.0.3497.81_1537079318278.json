@@ -19,6 +19,16 @@
             "keyword": "Before",
             "hidden": true,
             "match": {
+              "location": "e2e/steps/CrearTema.steps.ts:25"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
               "location": "e2e/steps/dashboard.steps.ts:7"
             },
             "result": {
@@ -57,7 +67,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1287000000
+              "duration": 1121000000
             }
           },
           {
@@ -70,7 +80,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 109000000
+              "duration": 72000000
             }
           },
           {
@@ -80,8 +90,7 @@
               "location": "node_modules/protractor-cucumber-framework/lib/resultsCapturer.js:25"
             },
             "result": {
-              "status": "passed",
-              "duration": 1000000
+              "status": "passed"
             }
           }
         ]
@@ -90,7 +99,7 @@
     "metadata": {
       "browser": {
         "name": "chrome",
-        "version": "69.0.3497.92"
+        "version": "69.0.3497.81"
       },
       "device": "",
       "platform": {

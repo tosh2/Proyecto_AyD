@@ -1,0 +1,269 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Crear tema",
+    "line": 1,
+    "id": "crear-tema",
+    "tags": [],
+    "uri": "e2e/features/CrearTema.feature",
+    "elements": [
+      {
+        "id": "crear-tema;crear-tema-con-tag",
+        "keyword": "Scenario",
+        "line": 2,
+        "name": "Crear tema con tag",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e/steps/CrearTema.steps.ts:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e/steps/dashboard.steps.ts:7"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e/steps/nombredashboard.steps.ts:7"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 3,
+            "name": "la aplicacion me dirija a la pagina de crear tema",
+            "match": {
+              "location": "e2e/steps/CrearTema.steps.ts:28"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2721000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 4,
+            "name": "la pagina tenga un campo para el nombre del tema y tenga como valor \"Tema prueba\"",
+            "match": {
+              "location": "e2e/steps/CrearTema.steps.ts:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 262000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 5,
+            "name": "la pagina tenga un campo para la descripcion del tema y tenga como valor \"Descripcion de prueba\"",
+            "match": {
+              "location": "e2e/steps/CrearTema.steps.ts:34"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 224000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 6,
+            "name": "la pagina tenga un campo para el tag del tema y tenga como valor \"#tagprueba\"",
+            "match": {
+              "location": "e2e/steps/CrearTema.steps.ts:37"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 195000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "se presione el boton de CrearTema",
+            "match": {
+              "location": "e2e/steps/CrearTema.steps.ts:40"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 148000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "recargue la pagina de crear tema",
+            "match": {
+              "location": "e2e/steps/CrearTema.steps.ts:43"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1183000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "node_modules/protractor-cucumber-framework/lib/resultsCapturer.js:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "crear-tema;crear-tema-sin-tag",
+        "keyword": "Scenario",
+        "line": 9,
+        "name": "Crear tema sin tag",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e/steps/CrearTema.steps.ts:25"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e/steps/dashboard.steps.ts:7"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e/steps/nombredashboard.steps.ts:7"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 10,
+            "name": "la aplicacion me dirija a la pagina de crear tema",
+            "match": {
+              "location": "e2e/steps/CrearTema.steps.ts:28"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1071000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "la pagina tenga un campo para el nombre del tema y tenga como valor \"Tema prueba\"",
+            "match": {
+              "location": "e2e/steps/CrearTema.steps.ts:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 131000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "la pagina tenga un campo para la descripcion del tema y tenga como valor \"Descripcion de prueba\"",
+            "match": {
+              "location": "e2e/steps/CrearTema.steps.ts:34"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 224000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 13,
+            "name": "se presione el boton de CrearTema",
+            "match": {
+              "location": "e2e/steps/CrearTema.steps.ts:40"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 139000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 14,
+            "name": "recargue la pagina de crear tema",
+            "match": {
+              "location": "e2e/steps/CrearTema.steps.ts:43"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1123000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "node_modules/protractor-cucumber-framework/lib/resultsCapturer.js:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          }
+        ]
+      }
+    ],
+    "metadata": {
+      "browser": {
+        "name": "chrome",
+        "version": "69.0.3497.81"
+      },
+      "device": "",
+      "platform": {
+        "name": "",
+        "version": ""
+      }
+    }
+  }
+]

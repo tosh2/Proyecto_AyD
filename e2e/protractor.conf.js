@@ -35,7 +35,8 @@ exports.config = {
       // <boolean> invoke formatters without executing steps
       dryRun: false,
       // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
-      compiler: []
+      compiler: [],
+      keepAlive: false,
     },
     // Here the magic happens
     plugins: [{
