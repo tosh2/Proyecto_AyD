@@ -8,10 +8,10 @@
     "uri": "e2e/features/dashboard.feature",
     "elements": [
       {
-        "id": "dashboard;carga-de-los-menus-del-panel-principal",
+        "id": "dashboard;cargar-el-menu-de-crear-tema",
         "keyword": "Scenario",
         "line": 2,
-        "name": "Carga de los menus del panel principal",
+        "name": "Cargar el menu de crear tema",
         "tags": [],
         "type": "scenario",
         "steps": [
@@ -22,8 +22,7 @@
               "location": "e2e/steps/CrearTema.steps.ts:25"
             },
             "result": {
-              "status": "passed",
-              "duration": 1000000
+              "status": "passed"
             }
           },
           {
@@ -68,7 +67,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1380000000
+              "duration": 1315000000
             }
           },
           {
@@ -81,7 +80,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 130000000
+              "duration": 115000000
             }
           },
           {
@@ -91,17 +90,16 @@
               "location": "node_modules/protractor-cucumber-framework/lib/resultsCapturer.js:25"
             },
             "result": {
-              "status": "passed",
-              "duration": 1000000
+              "status": "passed"
             }
           }
         ]
       },
       {
-        "id": "dashboard;carga-de-los-menus-del-panel-principal",
+        "id": "dashboard;carga-el-menu-de-listar-temas",
         "keyword": "Scenario",
         "line": 6,
-        "name": "Carga de los menus del panel principal",
+        "name": "Carga el menu de Listar temas",
         "tags": [],
         "type": "scenario",
         "steps": [
@@ -157,7 +155,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1045000000
+              "duration": 1184000000
             }
           },
           {
@@ -170,7 +168,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 59000000
+              "duration": 52000000
             }
           },
           {
@@ -186,10 +184,10 @@
         ]
       },
       {
-        "id": "dashboard;carga-de-los-menus-del-panel-principal",
+        "id": "dashboard;cargar-el-menu-de-temas",
         "keyword": "Scenario",
         "line": 10,
-        "name": "Carga de los menus del panel principal",
+        "name": "Cargar el menu de temas",
         "tags": [],
         "type": "scenario",
         "steps": [
@@ -210,8 +208,7 @@
               "location": "e2e/steps/dashboard.steps.ts:7"
             },
             "result": {
-              "status": "passed",
-              "duration": 1000000
+              "status": "passed"
             }
           },
           {
@@ -233,8 +230,7 @@
               "location": "e2e/steps/dashboard.steps.ts:9"
             },
             "result": {
-              "status": "passed",
-              "duration": 1000000
+              "status": "passed"
             }
           },
           {
@@ -247,7 +243,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1151000000
+              "duration": 1088000000
             }
           },
           {
@@ -260,7 +256,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 69000000
+              "duration": 51000000
             }
           },
           {
@@ -270,17 +266,16 @@
               "location": "node_modules/protractor-cucumber-framework/lib/resultsCapturer.js:25"
             },
             "result": {
-              "status": "passed",
-              "duration": 1000000
+              "status": "passed"
             }
           }
         ]
       },
       {
-        "id": "dashboard;carga-de-los-menus-del-panel-principal",
+        "id": "dashboard;cargar-todos-los-menus-del-panel-principal",
         "keyword": "Scenario",
         "line": 14,
-        "name": "Carga de los menus del panel principal",
+        "name": "Cargar todos los menus del panel principal",
         "tags": [],
         "type": "scenario",
         "steps": [
@@ -323,8 +318,7 @@
               "location": "e2e/steps/dashboard.steps.ts:9"
             },
             "result": {
-              "status": "passed",
-              "duration": 1000000
+              "status": "passed"
             }
           },
           {
@@ -337,7 +331,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1177000000
+              "duration": 1168000000
             }
           },
           {
@@ -350,7 +344,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 57000000
+              "duration": 51000000
             }
           },
           {
@@ -363,7 +357,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 46000000
+              "duration": 61000000
             }
           },
           {
@@ -376,7 +370,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 42000000
+              "duration": 43000000
             }
           },
           {

@@ -4,6 +4,7 @@ import { CrearTema } from './CrearTema.po';
 import { async } from '@angular/core/testing';
 import * as chai from 'chai';
 import * as cap from 'chai-as-promised';
+import { callbackify } from 'util';
 
 chai.use(cap);
 
@@ -26,6 +27,7 @@ const {defineSupportCode} = require('cucumber');
     });
     Given('la aplicacion me dirija a la pagina de crear tema', {timeout: 60 * 1000},  async () => {
         await browser.get('http://localhost:4200/CrearTema');
+    });
     Given(/^la pagina tenga un campo para el nombre del tema y tenga como valor "([^']*)"$/, (nombre: string) => {
        return home.setnombretema(nombre);
     });
@@ -38,12 +40,12 @@ const {defineSupportCode} = require('cucumber');
     When(/^se presione el boton de CrearTema$/, () => {
         return home.getsubmittema().click();
     });
-
     Then(/^recargue la pagina de crear tema$/, (done: any) => {
-        browser.wait(home.gettitulo().isPresent(), 5000).then(() => {
-          expect(home.gettitulo().getText()).equal('CREAR UN TEMA');
-          done();
+        browser.driver.navigate().refresh().then(() => {
+            expect(browser.waitForAngular());
+            done();
         });
     });
-});
+
+
 });
