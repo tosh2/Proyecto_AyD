@@ -49,6 +49,7 @@ export class AuthenticationService {
     if(this.usuariosC.length==1){
       localStorage.setItem("userSesion",this.usuariosC[0].usuario);
       localStorage.setItem("nameSesion",this.usuariosC[0].nombre);
+      localStorage.setItem("nameSesion",this.usuariosC[0].id);
       return true;
     }else{
       return false;

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthenticationService} from '../sysforum-services/authentication.service'
 import {Usuario} from '../sysforum-modelos/model-usuario';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,10 @@ export class LoginComponent implements OnInit {
     clave: ''
   };
   logeado: boolean = false;
-  constructor(public AuthenticationService: AuthenticationService,
+  
+  constructor(
+      public AuthenticationService: AuthenticationService,
+      private router: Router
               ) { 
 
   }
@@ -30,9 +34,12 @@ export class LoginComponent implements OnInit {
       this.logeado = this.AuthenticationService.login(this.user.usuario,this.user.clave);
       if(this.logeado==true){
         console.log("usuario logeado");
+        this.router.navigate(['/CrearTema']);
       }
       else{
         console.log("usuario NO logeado");
+        this.user.usuario = '';
+        this.user.clave = '';
       }
     }    
     this.logeado = false; 

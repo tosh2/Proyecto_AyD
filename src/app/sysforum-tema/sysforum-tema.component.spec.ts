@@ -21,6 +21,10 @@ import { componentFactoryName } from '@angular/compiler';
 import { By } from '@angular/platform-browser';
 
 describe('Componente Tema', () => {
+  
+  localStorage.setItem("userSesion","prueba");
+    localStorage.setItem("nameSesion","prueba");
+    localStorage.setItem("nameSesion","prueba");
 
   let component: SYSFORUMTEMAComponent;
   let fixture: ComponentFixture<SYSFORUMTEMAComponent>;
