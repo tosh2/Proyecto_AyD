@@ -83,6 +83,12 @@ describe('LoginComponent', () => {
     expect(component.user.clave).toBe('');
   });
 
+
+  it('verificar valor inicial de variable logeado', () =>  {
+    expect(component.logeado).toBe(false);
+    
+  });
+
   it('Metodo login y su servicio sean llamados',
   inject([AuthenticationService], (service: AuthenticationService) => {
     inject ([LoginComponent], (VerTema: LoginComponent) =>{
