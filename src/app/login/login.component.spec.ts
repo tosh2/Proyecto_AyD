@@ -74,13 +74,13 @@ describe('LoginComponent', () => {
   });
 
   it('Deberia crear modelo Usuario.', () =>  {
-    expect(component.usuario).toBeTruthy();
+    expect(component.user).toBeTruthy();
   });
 
   it('Deberia verificar los atributos de el modelo.', () =>  {
-    expect(component.usuario.nombre).toBe('');
-    expect(component.usuario.usuario).toBe('');
-    expect(component.usuario.clave).toBe('');
+    expect(component.user.nombre).toBe('');
+    expect(component.user.usuario).toBe('');
+    expect(component.user.clave).toBe('');
   });
 
   it('Metodo login y su servicio sean llamados',

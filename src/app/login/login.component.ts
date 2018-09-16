@@ -10,6 +10,11 @@ import {Usuario} from '../sysforum-modelos/model-usuario';
 })
 export class LoginComponent implements OnInit {
 
+  user: Usuario = {
+    nombre: '',
+    usuario: '',
+    clave: ''
+  };
   
   constructor(public AuthenticationService: AuthenticationService,
               ) { 
