@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {TemaFavorito} from '../sysforum-modelos/model-tema-favorito';
+
 import{
   AngularFirestore,
   AngularFirestoreCollection,
@@ -19,14 +20,27 @@ export class SysforumTemaFavoritoService {
 
   constructor(public afs: AngularFirestore) {
     this.favoritosCollection = this.afs.collection<TemaFavorito>('TemaFavorito');
+  }
+
+  getFavoritos(){
+    this.favoritosCollection = this.afs.collection<TemaFavorito>('TemaFavorito');
     this.favoritos =  this.favoritosCollection.snapshotChanges().pipe(map(changes =>{
       return changes.map(a => {
         const data = a.payload.doc.data() as TemaFavorito;
         return data;
       });
     }));
+    return this.favoritos
   }
-  getFavoritos(){
+
+  getFavoritosID(usuario: string){
+    this.favoritosCollection = this.afs.collection<TemaFavorito>('TemaFavorito', ref => ref.where('$id_usuario','==',usuario).where('banderaFavorito','==',true));
+    this.favoritos =  this.favoritosCollection.snapshotChanges().pipe(map(changes =>{
+      return changes.map(a => {
+        const data = a.payload.doc.data() as TemaFavorito;
+        return data;
+      });
+    }));
     return this.favoritos
   }
 

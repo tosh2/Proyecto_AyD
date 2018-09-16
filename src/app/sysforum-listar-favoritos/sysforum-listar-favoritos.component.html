@@ -1,0 +1,51 @@
+<br>
+
+<div *ngIf="favoritos?.length > 0; else noTemasFavoritos">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-1">
+      </div>
+      <div class="col-sm-10">
+        <div class="panel panel-danger">
+          <!-- Default panel contents -->
+          <div style="background-color: lightslategray" class="panel-heading">
+            <h3 style="color: white">LISTA DE TEMAS FAVORITOS</h3>
+          </div>
+            
+          <div class="panel-body">
+            <!-- List group -->
+              <div *ngFor="let fav of favoritos"> 
+                
+                <!-- <b style="color: rgb(113, 115, 117)" class="panel-heading">{{fav.id}}</b><br>  
+                <b><h3>{{fav.$id_tema}}</h3></b><br>
+                {{fav.$id_usuario}}<br> -->
+
+                <div *ngFor = "let tema of temas">
+                  
+                  <li *ngIf="fav.$id_tema == tema.id;" class="list-group-item">
+                      <b style="color: rgb(113, 115, 117)" class="panel-heading">{{tema.nombre_usuario}}</b><br>  
+                      <b><h3>{{tema.title}}</h3></b><br>
+                      <small style="color:rgb(51, 255, 0);">{{tema.tag}}</small><br>
+                      {{tema.description}}<br>
+                      <button class="btn btn-primary" routerLink="/VerTemas/{{tema.id}}/{{tema.title}}/{{tema.description}}/{{tema.tag}}" routerLinkActive="active">Ver</button>
+      
+                  </li>
+
+                </div>
+
+              </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<ng-template #noTemasFavoritos>
+     <h5>No hay temas favoritos</h5>
+</ng-template>
+
+<router-outlet></router-outlet>
