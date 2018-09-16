@@ -7,10 +7,12 @@
     <div class="col-sm-10">
       <div class="panel panel-default">
         <div style="background-color: lightslategray"  class="panel-heading">
-          <h1>{{Nombre}}</h1>
+          <p style="font-size:50px;">{{Nombre}}</p>
         </div>
         <div class="panel-body">
-          <h4 style="color:rgb(51, 255, 0);">{{Tag}}</h4>
+          <img img  src="./assets/img/estrella.png" height="30" width="30" id="button2"   routerLinkActive="active"
+            (click)="darFavorito($event, temFav)"/>
+          <p style="color:rgb(51, 255, 0); font-size: 20px;">{{Tag}}</p>
           <br>
           <h3>{{Descri}}</h3>
         </div>
@@ -20,9 +22,11 @@
 </div>
 
 <div class="container">
+  <ngb-alert *ngIf="(otherbanderafav == true && !staticAlertClosed)" type="success" (close)="staticAlertClosed = true"><strong>Agregado!</strong> a tus favoritos:)!!</ngb-alert>
     <ngb-alert *ngIf="(bandera == true)">
-        <strong>Esta!</strong> repetido.
+        <strong>Comentario ya puntuado!</strong>
     </ngb-alert>
+    <ngb-alert *ngIf="(banderafav == true && !staticAlertClosed)" type="info" (close)="staticAlertClosed = true"><strong>Espera!</strong> El tema ya es tu favorito :)!!</ngb-alert>
 </div>
 
 
@@ -35,21 +39,20 @@
       <div class="panel panel-danger">
           <!-- Default panel contents -->
           <div style="background-color: lightslategray" class="panel-heading"><h3>Comentarios</h3></div>
-          
         <div class="panel-body">
           <!-- List group -->
           <ul class="list-group">
               <li *ngFor="let comen of comentario" class="list-group-item">
-                  
-                    <b style="color: rgb(38, 60, 82)">{{comen.nombre_usuario}}</b>&nbsp;<small>{{comen.fecha.toDate()| date: 'medium'}}</small>
+
+                    <b style="color: rgb(76, 149, 221)">{{comen.nombre_usuario}}</b>&nbsp;<small>{{comen.fecha.toDate()| date: 'medium'}}</small>
                     <br>
                     <h3>{{comen.contenido}}</h3>
-                  
+
                     <strong>likes: </strong>{{comen.like}}<br>
-                    <button class="btn btn-primary" routerLinkActive="active" 
+                    <button class="btn btn-primary" routerLinkActive="active"
                     (click)="darLike($event, comen)">
                       <i>like</i>
-                    </button> 
+                    </button>
                 </li>
             </ul>
         </div>
@@ -58,15 +61,15 @@
           <form #comentarioForm="ngForm" (ngSubmit)="onSubmit(comentarioForm)">
             <div class="form-group">
               <b>{{userName}}</b>
-              <input 
+              <input
                 type="text"
-                class="form-control" 
-                name="contenido" 
+                class="form-control"
+                name="contenido"
                 [(ngModel)] = "coment.contenido"
-                placeholder="Agrega el contenido del comentario"  
+                placeholder="Agrega el contenido del comentario"
               >
             </div>
-      
+
             <div class="form-group">
               <button class="btn btn-primary" routerLinkActive="active" type="submit">
                   <i>Comentar</i>
@@ -83,7 +86,6 @@
 
 
 
-  
 
 
   <ng-template #noComentario>

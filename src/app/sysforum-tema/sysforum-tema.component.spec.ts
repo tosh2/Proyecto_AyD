@@ -1,4 +1,4 @@
-import { async, TestBed, ComponentFixture } from '@angular/core/testing';
+import { async, TestBed, ComponentFixture, inject } from '@angular/core/testing';
 
 import { SYSFORUMTEMAComponent } from './sysforum-tema.component';
 import { FormsModule } from '@angular/forms';
@@ -18,9 +18,16 @@ import { SidebarComponent } from '../components/sidebar/sidebar.component';
 import { FooterComponent } from '../components/footer/footer.component';
 import { Component } from '@angular/core';
 import { componentFactoryName } from '@angular/compiler';
-
+import { By } from '@angular/platform-browser';
 
 describe('Componente Tema', () => {
+  
+  localStorage.setItem("userSesion","prueba");
+    localStorage.setItem("nameSesion","prueba");
+    localStorage.setItem("nameSesion","prueba");
+
+  let component: SYSFORUMTEMAComponent;
+  let fixture: ComponentFixture<SYSFORUMTEMAComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -89,14 +96,27 @@ describe('Componente Tema', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('h6').textContent).toContain(component.userName);
   })); 
-  it('Validar insercion de nombre de usarua y id', () => { 
-    const fixture = TestBed.createComponent(SYSFORUMTEMAComponent);
-    const component = fixture.componentInstance;
-    fixture.detectChanges();
-    component.tema.description = "prueba";
-    component.tema.title = "prueba";
-    //const component = fixture.debugElement.nativeElement;
-    expect(component.onSubmit()).toEqual(true);
-  });  
+  
+  it('Metodo addTema y su servicio sean llamados',
+      inject([ServicioTemaService], (service: ServicioTemaService) => {
+
+        inject ([SYSFORUMTEMAComponent], (VerTema: SYSFORUMTEMAComponent) =>{
+          const ser = fixture.debugElement.injector.get(SYSFORUMTEMAComponent);
+          const t =component.onSubmit();
+          const onClikDarLike = spyOn(ser, 'onSubmit');
+
+          fixture.debugElement.query(By.css('button')).triggerEventHandler('click',null);
+          
+          expect(onClikDarLike.apply).toHaveBeenCalled();
+
+          expect(t).toHaveBeenCalled();
+          expect(t).toContain(service.addTema);
+          
+          expect(service.addTema).toBeTruthy.arguments(Array,'prueba','prueba','tag','0','userPrueba');
+          
+        })
+      })
+    );
+
 });
 

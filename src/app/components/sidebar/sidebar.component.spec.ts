@@ -63,6 +63,6 @@ describe('SidebarComponent', () => {
     fixture = TestBed.createComponent(SidebarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-    expect(component.menuItems.length).toEqual(3);
+    expect(component.menuItems.length).toEqual(5);
   });
 });

@@ -17,7 +17,6 @@ import {
 } from 'angularfire2/firestore';
 
 import {Tema} from '../sysforum-modelos/model-tema';
-//import {ServicioTemaService} from '../sysforum-services/servicio-tema.service';
 import { SysforumLoginComponent } from '../sysforum-login/sysforum-login.component';
 
 describe('SysforumMisTemasComponent', () => {
@@ -52,8 +51,20 @@ describe('SysforumMisTemasComponent', () => {
     fixture = TestBed.createComponent(SysforumMisTemasComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-    expect(!component.usuario).toEqual('');
+    expect(component.usuario != "");
   });
+
+  it('Metodo darLike y su servicio sean llamados',
+  inject([ServicioTemaService], (service: ServicioTemaService) => {
+
+    inject ([SysforumMisTemasComponent], (VerTema: SysforumMisTemasComponent) =>{
+
+      expect(service.getTemasUsuario).arguments(String,'0iuPkBQUSOkpgVKJaxqM');
+      
+    })
+  })
+);
+
   
 });
 
@@ -89,14 +100,15 @@ describe('Listar Temas',() =>{
 });
   */
 
-it('Metodo de mostrar temas por usuraio',
-inject([ServicioTemaService], (service: ServicioTemaService) => {
+  // it('Metodo de mostrar temas por usuraio',
+  //   inject([ServicioTemaService], (service: ServicioTemaService) => {
 
-    let usuarioActual = "0iuPkBQUSOkpgVKJaxqM";
-    expect(service.getTemasUsuario).arguments(usuarioActual);
+  //     let usuarioActual = "0iuPkBQUSOkpgVKJaxqM";
+  //     expect(service.getTemasUsuario).arguments(String, usuarioActual);
 
- 
-}));
+  //   })
+  // );
+
 
 });
 

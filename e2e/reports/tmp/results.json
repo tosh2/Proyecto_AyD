@@ -1,17 +1,19 @@
 [
   {
     "keyword": "Feature",
-    "name": "Dashboard",
+<<<<<<< HEAD
+=======
+    "name": "Crear tema",
     "line": 1,
-    "id": "dashboard",
+    "id": "crear-tema",
     "tags": [],
-    "uri": "e2e/features/dashboard.feature",
+    "uri": "e2e/features/CrearTema.feature",
     "elements": [
       {
-        "id": "dashboard;carga-de-los-menus-del-panel-principal",
+        "id": "crear-tema;crear-tema-con-tag",
         "keyword": "Scenario",
         "line": 2,
-        "name": "Carga de los menus del panel principal",
+        "name": "Crear tema con tag",
         "tags": [],
         "type": "scenario",
         "steps": [
@@ -19,11 +21,293 @@
             "keyword": "Before",
             "hidden": true,
             "match": {
-              "location": "e2e/steps/dashboard.steps.ts:7"
+              "location": "e2e/steps/CrearTema.steps.ts:25"
             },
             "result": {
               "status": "passed",
               "duration": 1000000
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e/steps/dashboard.steps.ts:7"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e/steps/nombredashboard.steps.ts:7"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 3,
+            "name": "la aplicacion me dirija a la pagina de crear tema",
+            "match": {
+              "location": "e2e/steps/CrearTema.steps.ts:28"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2721000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 4,
+            "name": "la pagina tenga un campo para el nombre del tema y tenga como valor \"Tema prueba\"",
+            "match": {
+              "location": "e2e/steps/CrearTema.steps.ts:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 262000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 5,
+            "name": "la pagina tenga un campo para la descripcion del tema y tenga como valor \"Descripcion de prueba\"",
+            "match": {
+              "location": "e2e/steps/CrearTema.steps.ts:34"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 224000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 6,
+            "name": "la pagina tenga un campo para el tag del tema y tenga como valor \"#tagprueba\"",
+            "match": {
+              "location": "e2e/steps/CrearTema.steps.ts:37"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 195000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "se presione el boton de CrearTema",
+            "match": {
+              "location": "e2e/steps/CrearTema.steps.ts:40"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 148000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "recargue la pagina de crear tema",
+            "match": {
+              "location": "e2e/steps/CrearTema.steps.ts:43"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1183000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "node_modules/protractor-cucumber-framework/lib/resultsCapturer.js:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "crear-tema;crear-tema-sin-tag",
+        "keyword": "Scenario",
+        "line": 9,
+        "name": "Crear tema sin tag",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e/steps/CrearTema.steps.ts:25"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e/steps/dashboard.steps.ts:7"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e/steps/nombredashboard.steps.ts:7"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 10,
+            "name": "la aplicacion me dirija a la pagina de crear tema",
+            "match": {
+              "location": "e2e/steps/CrearTema.steps.ts:28"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1071000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "la pagina tenga un campo para el nombre del tema y tenga como valor \"Tema prueba\"",
+            "match": {
+              "location": "e2e/steps/CrearTema.steps.ts:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 131000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "la pagina tenga un campo para la descripcion del tema y tenga como valor \"Descripcion de prueba\"",
+            "match": {
+              "location": "e2e/steps/CrearTema.steps.ts:34"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 224000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 13,
+            "name": "se presione el boton de CrearTema",
+            "match": {
+              "location": "e2e/steps/CrearTema.steps.ts:40"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 139000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 14,
+            "name": "recargue la pagina de crear tema",
+            "match": {
+              "location": "e2e/steps/CrearTema.steps.ts:43"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1123000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "node_modules/protractor-cucumber-framework/lib/resultsCapturer.js:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "keyword": "Feature",
+>>>>>>> upstream/Develop
+    "name": "Dashboard",
+    "line": 1,
+    "id": "dashboard",
+    "tags": [],
+    "uri": "e2e/features/dashboard.feature",
+    "elements": [
+      {
+<<<<<<< HEAD
+        "id": "dashboard;carga-de-los-menus-del-panel-principal",
+        "keyword": "Scenario",
+        "line": 2,
+        "name": "Carga de los menus del panel principal",
+=======
+        "id": "dashboard;cargar-el-menu-de-crear-tema",
+        "keyword": "Scenario",
+        "line": 2,
+        "name": "Cargar el menu de crear tema",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e/steps/CrearTema.steps.ts:25"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e/steps/dashboard.steps.ts:7"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e/steps/nombredashboard.steps.ts:7"
+            },
+            "result": {
+              "status": "passed"
             }
           },
           {
@@ -48,7 +332,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 4037000000
+              "duration": 1315000000
             }
           },
           {
@@ -61,33 +345,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 70000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 6,
-            "name": "ver un segundo menu que se llame \"LISTAR TEMAS\"",
-            "match": {
-              "location": "e2e/steps/dashboard.steps.ts:18"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 48000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 7,
-            "name": "ver un tercer menu que se llame \"TEMAS\"",
-            "match": {
-              "location": "e2e/steps/dashboard.steps.ts:21"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 62000000
+              "duration": 115000000
             }
           },
           {
@@ -97,8 +355,445 @@
               "location": "node_modules/protractor-cucumber-framework/lib/resultsCapturer.js:25"
             },
             "result": {
+              "status": "passed"
+            }
+          }
+        ]
+      },
+      {
+        "id": "dashboard;carga-el-menu-de-listar-temas",
+        "keyword": "Scenario",
+        "line": 6,
+        "name": "Carga el menu de Listar temas",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e/steps/CrearTema.steps.ts:25"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e/steps/dashboard.steps.ts:7"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e/steps/nombredashboard.steps.ts:7"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "entre a la aplicacion",
+            "match": {
+              "location": "e2e/steps/dashboard.steps.ts:9"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 8,
+            "name": "en el navegador se carga la pagina principal",
+            "match": {
+              "location": "e2e/steps/dashboard.steps.ts:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1184000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "ver un segundo menu que se llame \"LISTAR TEMAS\"",
+            "match": {
+              "location": "e2e/steps/dashboard.steps.ts:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 52000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "node_modules/protractor-cucumber-framework/lib/resultsCapturer.js:25"
+            },
+            "result": {
+              "status": "passed"
+            }
+          }
+        ]
+      },
+      {
+        "id": "dashboard;cargar-el-menu-de-temas",
+        "keyword": "Scenario",
+        "line": 10,
+        "name": "Cargar el menu de temas",
+>>>>>>> upstream/Develop
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+<<<<<<< HEAD
+              "location": "e2e/steps/dashboard.steps.ts:7"
+            },
+            "result": {
               "status": "passed",
               "duration": 1000000
+=======
+              "location": "e2e/steps/CrearTema.steps.ts:25"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e/steps/dashboard.steps.ts:7"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e/steps/nombredashboard.steps.ts:7"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 11,
+            "name": "entre a la aplicacion",
+            "match": {
+              "location": "e2e/steps/dashboard.steps.ts:9"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 12,
+            "name": "en el navegador se carga la pagina principal",
+            "match": {
+              "location": "e2e/steps/dashboard.steps.ts:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1088000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 13,
+            "name": "ver un tercer menu que se llame \"TEMAS\"",
+            "match": {
+              "location": "e2e/steps/dashboard.steps.ts:21"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 51000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "node_modules/protractor-cucumber-framework/lib/resultsCapturer.js:25"
+            },
+            "result": {
+              "status": "passed"
+            }
+          }
+        ]
+      },
+      {
+        "id": "dashboard;cargar-todos-los-menus-del-panel-principal",
+        "keyword": "Scenario",
+        "line": 14,
+        "name": "Cargar todos los menus del panel principal",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e/steps/CrearTema.steps.ts:25"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e/steps/dashboard.steps.ts:7"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e/steps/nombredashboard.steps.ts:7"
+            },
+            "result": {
+              "status": "passed"
+>>>>>>> upstream/Develop
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+<<<<<<< HEAD
+            "line": 3,
+=======
+            "line": 15,
+>>>>>>> upstream/Develop
+            "name": "entre a la aplicacion",
+            "match": {
+              "location": "e2e/steps/dashboard.steps.ts:9"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+<<<<<<< HEAD
+            "line": 4,
+=======
+            "line": 16,
+>>>>>>> upstream/Develop
+            "name": "en el navegador se carga la pagina principal",
+            "match": {
+              "location": "e2e/steps/dashboard.steps.ts:12"
+            },
+            "result": {
+              "status": "passed",
+<<<<<<< HEAD
+              "duration": 4037000000
+=======
+              "duration": 1168000000
+>>>>>>> upstream/Develop
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+<<<<<<< HEAD
+            "line": 5,
+=======
+            "line": 17,
+>>>>>>> upstream/Develop
+            "name": "ver un primer menu que se llame \"CREAR TEMA\"",
+            "match": {
+              "location": "e2e/steps/dashboard.steps.ts:15"
+            },
+            "result": {
+              "status": "passed",
+<<<<<<< HEAD
+              "duration": 70000000
+=======
+              "duration": 51000000
+>>>>>>> upstream/Develop
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+<<<<<<< HEAD
+            "line": 6,
+=======
+            "line": 18,
+>>>>>>> upstream/Develop
+            "name": "ver un segundo menu que se llame \"LISTAR TEMAS\"",
+            "match": {
+              "location": "e2e/steps/dashboard.steps.ts:18"
+            },
+            "result": {
+              "status": "passed",
+<<<<<<< HEAD
+              "duration": 48000000
+=======
+              "duration": 61000000
+>>>>>>> upstream/Develop
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+<<<<<<< HEAD
+            "line": 7,
+=======
+            "line": 19,
+>>>>>>> upstream/Develop
+            "name": "ver un tercer menu que se llame \"TEMAS\"",
+            "match": {
+              "location": "e2e/steps/dashboard.steps.ts:21"
+            },
+            "result": {
+              "status": "passed",
+<<<<<<< HEAD
+              "duration": 62000000
+=======
+              "duration": 43000000
+>>>>>>> upstream/Develop
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "node_modules/protractor-cucumber-framework/lib/resultsCapturer.js:25"
+            },
+            "result": {
+<<<<<<< HEAD
+              "status": "passed",
+              "duration": 1000000
+=======
+              "status": "passed"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "keyword": "Feature",
+    "name": "nombredashboard",
+    "line": 1,
+    "id": "nombredashboard",
+    "tags": [],
+    "uri": "e2e/features/nombredasboard.feature",
+    "elements": [
+      {
+        "id": "nombredashboard;cargar-el-nombre-en-el-panel-principal",
+        "keyword": "Scenario",
+        "line": 2,
+        "name": "cargar el nombre en el panel principal",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e/steps/CrearTema.steps.ts:25"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e/steps/dashboard.steps.ts:7"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e/steps/nombredashboard.steps.ts:7"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 3,
+            "name": "este logueado en la aplicacion",
+            "match": {
+              "location": "e2e/steps/nombredashboard.steps.ts:9"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 4,
+            "name": "en panel me mostrara la pagina principal",
+            "match": {
+              "location": "e2e/steps/nombredashboard.steps.ts:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1121000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 5,
+            "name": "ver el nombre de usuario que se llame \"USUARIODEPRUEBA\"",
+            "match": {
+              "location": "e2e/steps/nombredashboard.steps.ts:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 72000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "node_modules/protractor-cucumber-framework/lib/resultsCapturer.js:25"
+            },
+            "result": {
+              "status": "passed"
+>>>>>>> upstream/Develop
             }
           }
         ]
