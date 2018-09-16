@@ -85,7 +85,7 @@ export class SysforumVerTemaComponent implements OnInit {
     this.Identi = this.route.snapshot.paramMap.get('id');
     this.Tag = this.route.snapshot.paramMap.get('tag');
 
-  this.subscripcionFavorito =  this.temaFavoritoServicio.getFavoritos()
+    this.subscripcionFavorito =  this.temaFavoritoServicio.getFavoritos()
     .subscribe((CFav) =>{
 
       this.favoritosRegistrado = CFav;
@@ -118,7 +118,7 @@ export class SysforumVerTemaComponent implements OnInit {
 
   setId(id: string){
     if(id == ''){
-      this.userId = '8';
+      this.userId = '0';
       return this.userId;
     }else{
       this.userId = id;
@@ -181,19 +181,14 @@ export class SysforumVerTemaComponent implements OnInit {
     }
   }
 
-  darFavorito(even, fav){
-    this.Vsesion = this.userId;
-    console.log(this.Vsesion);
-    console.log(fav);
+  darFavorito(even,fav){
+    this.banderafav = false;
 
-    for (let index = 0; index < this.favoritosRegistrado.length; index++) {
-      const elemento= this.favoritosRegistrado[index]
-      if(this.Vsesion == elemento.$id_usuario && fav.id == elemento.$id_tema){
+    this.favoritosRegistrado.forEach(ele=>{
+      if(this.userId== ele.$id_usuario && this.Identi == ele.$id_tema){
         this.banderafav = true;
-        console.log('Esta repetido');
-      }
-
     }
+    });
 
     if(this.banderafav == false){
       this.temFav.banderaFavorito = true;
