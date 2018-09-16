@@ -13,6 +13,8 @@ import { SysforumPageNotFoundComponent } from './sysforum-page-not-found/sysforu
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { SysforumCrearCuentaComponent } from './sysforum-crear-cuenta/sysforum-crear-cuenta.component';
 import {LoginComponent} from './login/login.component'
+import { SysforumListarFavoritosComponent } from './sysforum-listar-favoritos/sysforum-listar-favoritos.component';
+
 
 //Rutas que se utilizaran
 const routes: Routes = [
@@ -35,6 +37,7 @@ const routes: Routes = [
   { path: 'CrearUsuario', component: SysforumCrearCuentaComponent },
   { path: 'VerTemas/:id/:name/:des/:tag', component: SysforumVerTemaComponent },
   { path: 'login', component: LoginComponent},
+  { path: 'TemasFavoritos', component: SysforumListarFavoritosComponent },
   { path: '**', component: SysforumPageNotFoundComponent},
 
 ];
