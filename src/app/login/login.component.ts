@@ -15,18 +15,27 @@ export class LoginComponent implements OnInit {
     usuario: '',
     clave: ''
   };
-  
+  logeado: boolean = false;
   constructor(public AuthenticationService: AuthenticationService,
               ) { 
 
   }
 
   ngOnInit() {
-   
+    this.logeado = false;
   }
 
   onSubmit(){
-    
+    if(this.user.clave!=='' && this.user.usuario!==''){
+      this.logeado = this.AuthenticationService.login(this.user.usuario,this.user.clave);
+      if(this.logeado==true){
+        console.log("usuario logeado");
+      }
+      else{
+        console.log("usuario NO logeado");
+      }
+    }    
+    this.logeado = false; 
   }
 
 
