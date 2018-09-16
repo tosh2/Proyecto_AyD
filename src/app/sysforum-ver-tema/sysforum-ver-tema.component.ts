@@ -12,7 +12,8 @@ import { FirebaseApp } from 'angularfire2';
 import { SysforumLikeService } from '../sysforum-services/sysforum-like.service';
 import {TemaFavorito} from '../sysforum-modelos/model-tema-favorito';
 import { SysforumTemaFavoritoService } from '../sysforum-services/sysforum-tema-favorito.service';
-
+import {debounceTime} from 'rxjs/operators';
+import {Subject} from 'rxjs';
 @Component({
   selector: 'app-sysforum-ver-tema',
   templateUrl: './sysforum-ver-tema.component.html',
@@ -32,9 +33,13 @@ export class SysforumVerTemaComponent implements OnInit {
   likeRegistrado : Like[];
   closed:boolean = false;
   banderafav:boolean = false;
+  otherbanderafav:boolean = false;
   favoritosRegistrado: TemaFavorito[] = null;
   subscripcionFavorito: Subscription;
   subscripcionLike: Subscription;
+  private _success = new Subject<string>();
+  staticAlertClosed = false;
+  successMessage: string;
   coment: Comentario ={
     $id_tema : '',
     contenido : '',
@@ -84,25 +89,18 @@ export class SysforumVerTemaComponent implements OnInit {
     this.Descri = this.route.snapshot.paramMap.get('des');
     this.Identi = this.route.snapshot.paramMap.get('id');
     this.Tag = this.route.snapshot.paramMap.get('tag');
-
     this.subscripcionFavorito =  this.temaFavoritoServicio.getFavoritos()
     .subscribe((CFav) =>{
-
       this.favoritosRegistrado = CFav;
-    }
-  );
-
+      }
+    );
     this.comentarioServicio.getComentarios(this.Identi).subscribe(Comentar =>{
       this.comentario = Comentar;
     });
     this.coment.$id_tema = this.route.snapshot.paramMap.get('id');
-
-  this.subscripcionLike =  this.likeRegisServicio.getLikes().subscribe(CLike =>{
-
+    this.subscripcionLike =  this.likeRegisServicio.getLikes().subscribe(CLike =>{
       this.likeRegistrado = CLike;
     });
-
-
     this.route.url
       .subscribe(url => console.log('The URL changed to: ' + url));
 
@@ -158,7 +156,6 @@ export class SysforumVerTemaComponent implements OnInit {
     this.Vsesion = this.userId;
     console.log(this.Vsesion);
     console.log(comen);
-
     if(this.Vsesion == comen.idSesion){
       this.bandera = true;
       console.log('Esta repetido');
@@ -181,16 +178,21 @@ export class SysforumVerTemaComponent implements OnInit {
     }
   }
 
-  darFavorito(even,fav){
-    this.banderafav = false;
-
-    this.favoritosRegistrado.forEach(ele=>{
-      if(this.userId== ele.$id_usuario && this.Identi == ele.$id_tema){
+  darFavorito(even, fav){
+    this.staticAlertClosed = false
+    this.Vsesion = this.userId;
+    console.log(this.Vsesion);
+    for (let index = 0; index < this.favoritosRegistrado.length; index++) {
+      const elemento= this.favoritosRegistrado[index]
+      if(this.Vsesion == elemento.$id_usuario && this.Identi== elemento.$id_tema){
         this.banderafav = true;
+        this.otherbanderafav= false;
+        console.log('Esta repetido');
+      }
     }
-    });
 
     if(this.banderafav == false){
+      this.otherbanderafav = true;
       this.temFav.banderaFavorito = true;
       this.temFav.$id_tema = this.Identi;
       this.temFav.$id_usuario = this.userId;

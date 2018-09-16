@@ -65,7 +65,7 @@ describe('SysforumVerTemaComponent', () => {
     const fixture = TestBed.createComponent(SysforumVerTemaComponent);
     const component = fixture.componentInstance;
     fixture.detectChanges();
-    expect(component.setId('')).not.toEqual('-1');
+    expect(component.setId('')).toEqual('0');
   });
   it('Validar variables de sesion Nombre por defecto', () => { 
     const fixture = TestBed.createComponent(SysforumVerTemaComponent);
